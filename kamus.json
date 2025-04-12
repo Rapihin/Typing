@@ -209,9 +209,9 @@
   "santuy": "santai", "santai": "santai",
   "parah": "parah", "parahh": "parah", " nemen": "parah/sangat",
   "hangat": "hangat", "warm": "hangat", "dingin": "dingin", "cold": "dingin", "adem": "dingin/sejuk",
-  "basah": "basah", "wet": "basah", "teles": "basah", // Jawa: teles
+  "basah": "basah", "wet": "basah", "teles": "basah",
   "kering": "kering", "dry": "kering", "garing": "kering",
-  "kotor": "kotor", "dirty": "kotor", "reged": "kotor", // Jawa: reged
+  "kotor": "kotor", "dirty": "kotor", "reged": "kotor",
   "bersih": "bersih", "clean": "bersih", "resik": "bersih",
   "terang": "terang", "bright": "terang", "padang": "terang",
   "gelap": "gelap", "dark": "gelap", "peteng": "gelap",
@@ -230,7 +230,7 @@
   "syukurlah": "syukurlah", "alhamdulillah": "alhamdulillah", "puji Tuhan": "puji Tuhan",
   "smg": "semoga", "moga": "semoga", "wish": "semoga", "amin": "aamiin", "aamiin": "aamiin", "mugi": "semoga", "mugia": "semoga",
   "syg": "sayang", "cinta": "cinta", "love": "cinta", "dear": "sayang", "tresna": "cinta", "tresno": "cinta",
-  "maap": "maaf", "mf": "maaf", "sorry": "maaf", "maafin": "maafin", "punten": "maaf", "ngapunten": "maaf (hormat)", "sepurane": "maaf", // Jawa: sepurane
+  "maap": "maaf", "mf": "maaf", "sorry": "maaf", "maafin": "maafin", "punten": "maaf", "ngapunten": "maaf (hormat)", "sepurane": "maaf",
   "thx": "terima kasih", "tq": "terima kasih", "makasi": "terima kasih", "makasih": "terima kasih", "nuwun": "terima kasih", "thanks": "terima kasih", "thank you": "terima kasih", "matur nuwun": "terima kasih (hormat)", "matur suwun": "terima kasih", "mksh": "terima kasih", "maksih": "terima kasih",
   "pls": "tolong", "plis": "tolong", "tlng": "tolong", "please": "tolong", "tulung": "tolong",
   "slmt": "selamat", "congrats": "selamat", "congratulations": "selamat", "slmt dtg": "selamat datang", "welcome": "selamat datang", "sugeng rawuh": "selamat datang (hormat)",
@@ -272,7 +272,7 @@
   "okd": "oke deh", "okelah": "okelah", "yaudah": "ya sudah", "yowis": "ya sudah", "wis": "sudah",
   "monggo": "silakan",
   "nuwun sewu": "permisi",
-  "permisi": "permisi", "amit": "permisi", // Jawa: amit
+  "permisi": "permisi", "amit": "permisi",
 
   "jg": "juga", "jga": "juga", "too": "juga", "also": "juga", "ugo": "juga",
   "brg": "bareng", "bareng": "bareng", "karo": "bareng",
