@@ -1,6 +1,6 @@
 # Typing Ganteng Generator ✨
 
-[![Typing Ganteng Generator Screenshot](Screen.png)](https://rapihin.github.io/typing) 
+[![Typing Ganteng Generator Screenshot](screen.jpg)](https://rapihin.github.io/typing) 
 > Alat bantu online sederhana untuk mengubah gaya tulisan chat/santai/alay menjadi lebih rapi, sopan, tetap santai, dan keren ala "Typing Ganteng" yang sedang tren.
 
 Website ini dibuat menggunakan HTML, CSS, dan JavaScript murni (Vanilla JS) dengan fokus pada pemrosesan di sisi klien (client-side).
