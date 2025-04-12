@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Ganteng Generator ✨ v3</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Typing Ganteng Generator ✨ v4 (JSON)</title> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-
     <style>
-        /* --- CSS Variables (Konfigurasi Tema) --- */
+        /* ... CSS Anda (tidak perlu diubah) ... */
         :root {
             --bg-color: #f4f7f9; /* Sedikit off-white */
             --text-color: #333;
@@ -255,14 +254,18 @@
             white-space: pre-wrap; /* Preserve line breaks and spaces */
             word-wrap: break-word; /* Prevent overflow */
             transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity 0.4s ease, transform 0.4s ease;
-            opacity: 0; /* Initially hidden, shown on generate */
-            transform: scale(0.98); /* Start slightly smaller */
+            /* Opacity/Transform for result animation handled by JS adding/removing .visible */
         }
 
         #outputResult.visible {
             opacity: 1;
             transform: scale(1);
         }
+         #outputResult:not(.visible){
+             opacity: 0;
+             transform: scale(0.98);
+         }
+
 
         /* --- Animations --- */
         @keyframes fadeInUp {
@@ -316,23 +319,20 @@
             </svg>
 
             <h1>Typing Ganteng Generator ✨</h1>
-            <p>Ubah gaya tulisanmu jadi lebih rapi, santai, sopan, dan kekinian! (Logika di file terpisah, kamus lebih banyak)</p>
+            <p>Ubah gaya tulisanmu jadi lebih rapi dan kekinian! (Kamus dimuat dari JSON)</p>
         </header>
 
         <div class="input-section">
             <label for="inputText">Teks Asli Kamu:</label>
             <textarea id="inputText" rows="5" placeholder="Contoh: mager bgt gw hari ini, pengen healing aja rasanya... ygy?"></textarea>
             <div class="button-group">
-                 <button id="generateButton">✨ Generate Typing Ganteng</button>
-            </div>
+                 <button id="generateButton" disabled>✨ Generate Typing Ganteng</button> </div>
         </div>
 
         <div class="output-section">
             <label for="outputResult">Hasil Typing Ganteng:</label>
-            <div id="outputResult" aria-live="polite">Hasil akan muncul di sini...</div>
-             <div class="button-group">
-                 <button id="copyButton" disabled>Salin Hasil</button>
-             </div>
+            <div id="outputResult" aria-live="polite">Memuat kamus kata...</div> <div class="button-group">
+                 <button id="copyButton" disabled>Salin Hasil</button> </div>
         </div>
 
     </div>
