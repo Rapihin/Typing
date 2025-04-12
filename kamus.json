@@ -1,313 +1,306 @@
 {
-  // --- PERINGATAN: Kamus besar ini akan memperlambat loading & proses generate! ---
-
-  // --- Identitas & Sapaan ---
   "aq": "aku", "sy": "saya", "gw": "aku", "gue": "aku", "gua": "aku", "ane": "aku", "saya": "aku", "aku": "aku", "ku": "aku",
-  "km": "kamu", "klian": "kalian", "anda": "kamu", "loe": "kamu", "lu": "kamu", "antum": "kamu", "sampean": "kamu", "situ": "kamu", "koe": "kamu", "kowe": "kamu", "panjenengan": "kamu", // Jawa: koe, kowe, panjenengan -> kamu
+  "km": "kamu", "klian": "kalian", "anda": "kamu", "loe": "kamu", "lu": "kamu", "antum": "kamu", "sampean": "kamu", "situ": "kamu", "koe": "kamu", "kowe": "kamu", "panjenengan": "kamu",
   "dia": "dia", "doi": "dia", "beliau": "beliau", "dy": "dia", "dee": "dia",
-  "kita": "kita", "kami": "kami", "awakdewe": "kita", // Jawa: awakdewe -> kita
-  "org": "orang", "wong": "orang", // Jawa: wong -> orang
-  "tmn": "teman", "temen": "teman", "kwn": "kawan", "sahabat": "sahabat", "bestie": "sahabat", "besti": "sahabat", "pren": "teman", "konco": "teman", "kanca": "teman", // Jawa: konco, kanca -> teman
-  "pak": "Bapak", "bpk": "Bapak", "bu": "Ibu", "mas": "Mas", "mbak": "Mbak", "kak": "Kak", "dek": "Adik", "om": "Om", "tante": "Tante", "dik": "Adik", "kang": "Mas", // Jawa: kang -> Mas
+  "kita": "kita", "kami": "kami", "awakdewe": "kita",
+  "org": "orang", "wong": "orang",
+  "tmn": "teman", "temen": "teman", "kwn": "kawan", "sahabat": "sahabat", "bestie": "sahabat", "besti": "sahabat", "pren": "teman", "konco": "teman", "kanca": "teman",
+  "pak": "Bapak", "bpk": "Bapak", "bu": "Ibu", "mas": "Mas", "mbak": "Mbak", "kak": "Kak", "dek": "Adik", "om": "Om", "tante": "Tante", "dik": "Adik", "kang": "Mas",
   "pakdhe": "Pakdhe", "budhe": "Budhe", "mbah": "Mbah", "eyang": "Eyang",
 
-  // --- Waktu & Tanggal ---
-  "td": "tadi", "ntr": "nanti", "ntar": "nanti", "bsk": "besok", "lusa": "lusa", "kpn2": "kapan-kapan", "sesok": "besok", // Jawa: sesok -> besok
-  "skrg": "sekarang", "skrng": "sekarang", "rn": "sekarang", "now": "sekarang", "saiki": "sekarang", // Jawa: saiki -> sekarang
-  "dl": "dulu", "dlu": "dulu", "dulu": "dulu", "mbiyen": "dulu", "biyen": "dulu", // Jawa: mbiyen, biyen -> dulu
+  "td": "tadi", "ntr": "nanti", "ntar": "nanti", "bsk": "besok", "lusa": "lusa", "kpn2": "kapan-kapan", "sesok": "besok",
+  "skrg": "sekarang", "skrng": "sekarang", "rn": "sekarang", "now": "sekarang", "saiki": "sekarang",
+  "dl": "dulu", "dlu": "dulu", "dulu": "dulu", "mbiyen": "dulu", "biyen": "dulu",
   "kpn": "kapan", "kapan2": "kapan-kapan",
-  "bntr": "sebentar", "sbntr": "sebentar", "sebentar": "sebentar", "sedelo": "sebentar", // Jawa: sedelo -> sebentar
-  "hr": "hari", "hri": "hari", "senin": "Senin", "selasa": "Selasa", "rabu": "Rabu", "kamis": "Kamis", "jumat": "Jumat", "sabtu": "Sabtu", "minggu": "Minggu", "dino": "hari", // Jawa: dino -> hari
+  "bntr": "sebentar", "sbntr": "sebentar", "sebentar": "sebentar", "sedelo": "sebentar",
+  "hr": "hari", "hri": "hari", "senin": "Senin", "selasa": "Selasa", "rabu": "Rabu", "kamis": "Kamis", "jumat": "Jumat", "sabtu": "Sabtu", "minggu": "Minggu", "dino": "hari",
   "tgl": "tanggal", "date": "tanggal",
-  "bln": "bulan", "jan": "Januari", "feb": "Februari", "mar": "Maret", "apr": "April", "mei": "Mei", "jun": "Juni", "jul": "Juli", "ags": "Agustus", "sep": "September", "okt": "Oktober", "nov": "November", "des": "Desember", "wulan": "bulan", // Jawa: wulan -> bulan
+  "bln": "bulan", "jan": "Januari", "feb": "Februari", "mar": "Maret", "apr": "April", "mei": "Mei", "jun": "Juni", "jul": "Juli", "ags": "Agustus", "sep": "September", "okt": "Oktober", "nov": "November", "des": "Desember", "wulan": "bulan",
   "thn": "tahun", "taun": "tahun", "year": "tahun",
-  "malem": "malam", "mlm": "malam", "nite": "malam", "wengi": "malam", // Jawa: wengi -> malam
-  "pagi": "pagi", "morning": "pagi", "esuk": "pagi", // Jawa: esuk -> pagi
-  "siang": "siang", "afternoon": "siang", "awan": "siang", // Jawa: awan -> siang
-  "sore": "sore", "evening": "sore", "sonten": "sore", // Jawa: sonten -> sore
+  "malem": "malam", "mlm": "malam", "nite": "malam", "wengi": "malam",
+  "pagi": "pagi", "morning": "pagi", "esuk": "pagi",
+  "siang": "siang", "afternoon": "siang", "awan": "siang",
+  "sore": "sore", "evening": "sore", "sonten": "sore",
   "weekend": "akhir pekan", "weekday": "hari kerja",
   "jam": "jam", "menit": "menit", "detik": "detik", "sejam": "sejam", "semenit": "semenit", "sedetik": "sedetik",
 
-   // --- Kata Tanya & Sambung ---
-  "yg": "yang", "utk": "untuk", "dgn": "dengan", "dg": "dengan", "sama": "dengan", "karo": "dengan", // Jawa: karo -> dengan/sama
-  "dr": "dari", "dri": "dari", "fr": "dari", "soko": "dari", // Jawa: soko -> dari
-  "kmn": "kemana", "dmn": "dimana", "dimn": "dimana", "where": "dimana", "nandi": "kemana/dimana", // Jawa: nandi -> kemana/dimana
-  "gmn": "gimana", "gmana": "gimana", "gmna": "gimana", "how": "gimana", "piye": "gimana", "pripun": "gimana", // Jawa: piye, pripun -> gimana
-  "knp": "kenapa", "napa": "kenapa", "why": "kenapa", "ngopo": "kenapa", // Jawa: ngopo -> kenapa
-  "brp": "berapa", "harganya": "berapa harganya", "price": "harga", "piro": "berapa", // Jawa: piro -> berapa
+  "yg": "yang", "utk": "untuk", "dgn": "dengan", "dg": "dengan", "sama": "dengan", "karo": "dengan",
+  "dr": "dari", "dri": "dari", "fr": "dari", "soko": "dari",
+  "kmn": "kemana", "dmn": "dimana", "dimn": "dimana", "where": "dimana", "nandi": "kemana/dimana",
+  "gmn": "gimana", "gmana": "gimana", "gmna": "gimana", "how": "gimana", "piye": "gimana", "pripun": "gimana",
+  "knp": "kenapa", "napa": "kenapa", "why": "kenapa", "ngopo": "kenapa",
+  "brp": "berapa", "harganya": "berapa harganya", "price": "harga", "piro": "berapa",
   "bgmn": "bagaimana",
-  "drpd": "daripada", "ketimbang": "daripada", "tinimbang": "daripada", // Jawa: tinimbang -> daripada
-  "klo": "kalau", "kl": "kalau", "kalo": "kalau", "if": "kalau", "nek": "kalau", "yen": "kalau", // Jawa: nek, yen -> kalau
-  "ato": "atau", "atw": "atau", "or": "atau", "opo": "atau/apa", // Jawa: opo -> atau/apa
-  "krn": "karena", "karna": "karena", "sbb": "sebab", "because": "karena", "coz": "karena", "mergo": "karena", "jalaran": "karena", // Jawa: mergo, jalaran -> karena
-  "sblm": "sebelum", "sblmnya": "sebelumnya", "before": "sebelum", "sakdurunge": "sebelumnya", // Jawa: sakdurunge -> sebelumnya
-  "stlh": "setelah", "stlhnya": "setelahnya", "after": "setelah", "sakwise": "setelahnya", "bar": "setelah", // Jawa: sakwise, bar -> setelah
-  "jd": "jadi", "so": "jadi", "dadi": "jadi", // Jawa: dadi -> jadi
-  "tp": "tapi", "tpi": "tapi", "but": "tapi", "nanging": "tapi", // Jawa: nanging -> tapi
-  "agr": "agar", "spy": "supaya", "ben": "agar/supaya", // Jawa: ben -> agar/supaya
-  "pdhl": "padahal", "pdhal": "padahal", "kamangka": "padahal", // Jawa: kamangka -> padahal
-  "wlpn": "walaupun", "meski": "meskipun", "mskpn": "meskipun", "although": "walaupun", "senajan": "walaupun", // Jawa: senajan -> walaupun
-  "serta": "serta", "dan": "dan", "and": "dan", "lan": "dan", // Jawa: lan -> dan
-  "utk": "untuk", "for": "untuk", "kanggo": "untuk", "gawe": "untuk", // Jawa: kanggo, gawe -> untuk
-  "ttg": "tentang", "about": "tentang", "bab": "tentang", // Jawa: bab -> tentang
-  "d": "di", "di": "di", "neng": "di", // Jawa/Sunda: neng -> di
-  "k": "ke", "ke": "ke", "menyang": "ke", // Jawa: menyang -> ke
+  "drpd": "daripada", "ketimbang": "daripada", "tinimbang": "daripada",
+  "klo": "kalau", "kl": "kalau", "kalo": "kalau", "if": "kalau", "nek": "kalau", "yen": "kalau",
+  "ato": "atau", "atw": "atau", "or": "atau", "opo": "atau/apa",
+  "krn": "karena", "karna": "karena", "sbb": "sebab", "because": "karena", "coz": "karena", "mergo": "karena", "jalaran": "karena",
+  "sblm": "sebelum", "sblmnya": "sebelumnya", "before": "sebelum", "sakdurunge": "sebelumnya",
+  "stlh": "setelah", "stlhnya": "setelahnya", "after": "setelah", "sakwise": "setelahnya", "bar": "setelah",
+  "jd": "jadi", "so": "jadi", "dadi": "jadi",
+  "tp": "tapi", "tpi": "tapi", "but": "tapi", "nanging": "tapi",
+  "agr": "agar", "spy": "supaya", "ben": "agar/supaya",
+  "pdhl": "padahal", "pdhal": "padahal", "kamangka": "padahal",
+  "wlpn": "walaupun", "meski": "meskipun", "mskpn": "meskipun", "although": "walaupun", "senajan": "walaupun",
+  "serta": "serta", "dan": "dan", "and": "dan", "lan": "dan",
+  "utk": "untuk", "for": "untuk", "kanggo": "untuk", "gawe": "untuk",
+  "ttg": "tentang", "about": "tentang", "bab": "tentang",
+  "d": "di", "di": "di", "neng": "di",
+  "k": "ke", "ke": "ke", "menyang": "ke",
   "malah": "malah", "malahan": "malahan", "justru": "justru",
   "pas": "pas", "tepat": "tepat",
-  "mung": "hanya", "gur": "hanya", "amung": "hanya", // Jawa: mung, gur, amung -> hanya
-  "kabeh": "semua", // Jawa: kabeh -> semua
-  "maneh": "lagi", // Jawa: maneh -> lagi
-  "wae": "saja", "ae": "saja", "mawon": "saja", // Jawa: wae, ae, mawon -> saja
-  "sik": "dulu", "sek": "dulu", // Jawa: sik, sek -> dulu (tunggu sebentar)
+  "mung": "hanya", "gur": "hanya", "amung": "hanya",
+  "kabeh": "semua",
+  "maneh": "lagi",
+  "wae": "saja", "ae": "saja", "mawon": "saja",
+  "sik": "dulu", "sek": "dulu",
 
-   // --- Kata Kerja Umum ---
-  // Pola akan dimasukkan sbg variasi, misal kerja, ngerjain, dikerjain, pekerjaan
   "lg": "lagi", "sdg": "sedang", "lagi": "lagi", "tengah": "sedang",
-  "blg": "bilang", "ngomong": "bilang", "ngmg": "bilang", "say": "bilang", "tell": "bilang", "crita": "cerita", "matur": "bilang (hormat)", // Jawa: matur -> bilang (hormat)
-  "liat": "lihat", "liht": "lihat", "nntn": "nonton", "watch": "nonton", "see": "lihat", "delok": "lihat", "ndelok": "melihat", "mirsani": "melihat (hormat)", // Jawa: delok, ndelok, mirsani -> lihat
-  "mkn": "makan", "sarapan": "sarapan", "maksi": "makan siang", "mkn mlm": "makan malam", "eat": "makan", "mangan": "makan", "nedha": "makan (hormat)", "dahar": "makan (hormat)", // Jawa: mangan, nedha, dahar -> makan
-  "ksh": "kasih", "beri": "beri", "ngasih": "memberi", "give": "beri", "menehi": "memberi", "paring": "memberi (hormat)", // Jawa: menehi, paring -> memberi
-  "blm": "belum", "blom": "belum", "bloman": "belum", "not yet": "belum", "durung": "belum", // Jawa: durung -> belum
-  "bs": "bisa", "bsa": "bisa", "can": "bisa", "iso": "bisa", // Jawa: iso -> bisa
-  "tdr": "tidur", "bobok": "tidur", "sleep": "tidur", "turu": "tidur", "sare": "tidur (hormat)", // Jawa: turu, sare -> tidur
-  "krj": "kerja", "kerja": "kerja", "ngantor": "ke kantor", "wfh": "kerja dari rumah", "wfo": "kerja dari kantor", "work": "kerja", "gawe": "kerja", "kerjo": "kerja", "nggawe": "membuat/mengerjakan", "digawe": "dibuat/dikerjakan", "penggawean": "pekerjaan", // Jawa: kerjo, gawe, nggawe, digawe, penggawean
-  "bljr": "belajar", "nugas": "mengerjakan tugas", "study": "belajar", "learn": "belajar", "sinau": "belajar", // Jawa: sinau -> belajar
+  "blg": "bilang", "ngomong": "bilang", "ngmg": "bilang", "say": "bilang", "tell": "bilang", "crita": "cerita", "matur": "bilang (hormat)",
+  "liat": "lihat", "liht": "lihat", "nntn": "nonton", "watch": "nonton", "see": "lihat", "delok": "lihat", "ndelok": "melihat", "mirsani": "melihat (hormat)",
+  "mkn": "makan", "sarapan": "sarapan", "maksi": "makan siang", "mkn mlm": "makan malam", "eat": "makan", "mangan": "makan", "nedha": "makan (hormat)", "dahar": "makan (hormat)",
+  "ksh": "kasih", "beri": "beri", "ngasih": "memberi", "give": "beri", "menehi": "memberi", "paring": "memberi (hormat)",
+  "blm": "belum", "blom": "belum", "bloman": "belum", "not yet": "belum", "durung": "belum",
+  "bs": "bisa", "bsa": "bisa", "can": "bisa", "iso": "bisa",
+  "tdr": "tidur", "bobok": "tidur", "sleep": "tidur", "turu": "tidur", "sare": "tidur (hormat)",
+  "krj": "kerja", "kerja": "kerja", "ngantor": "ke kantor", "wfh": "kerja dari rumah", "wfo": "kerja dari kantor", "work": "kerja", "gawe": "kerja", "kerjo": "kerja", "nggawe": "membuat/mengerjakan", "digawe": "dibuat/dikerjakan", "penggawean": "pekerjaan",
+  "bljr": "belajar", "nugas": "mengerjakan tugas", "study": "belajar", "learn": "belajar", "sinau": "belajar",
   "byr": "bayar", "byrin": "bayarin", "pay": "bayar",
-  "cri": "cari", "nyari": "mencari", "find": "cari", "search": "cari", "golek": "cari", "nggoleki": "mencari", // Jawa: golek, nggoleki -> cari
-  "dpt": "dapat", "dapet": "dapat", "get": "dapat", "oleh": "dapat", // Jawa: oleh -> dapat
-  "ilang": "hilang", "kelangan": "kehilangan", "lost": "hilang", "ical": "hilang (hormat)", // Jawa: ical -> hilang (hormat)
-  "dtg": "datang", "dateng": "datang", "come": "datang", "teko": "datang", "rawuh": "datang (hormat)", // Jawa: teko, rawuh -> datang
-  "plg": "pulang", "pulng": "pulang", "go home": "pulang", "bali": "pulang", "mulih": "pulang", "kondur": "pulang (hormat)", // Jawa: bali, mulih, kondur -> pulang
-  "prgi": "pergi", "go": "pergi", "lungo": "pergi", "tindak": "pergi (hormat)", // Jawa: lungo, tindak -> pergi
-  "tggu": "tunggu", "nunggu": "menunggu", "wait": "tunggu", "enteni": "tunggu", "ngenteni": "menunggu", // Jawa: enteni, ngenteni -> tunggu
-  "ngerti": "mengerti", "paham": "paham", "understand": "paham", "mudeng": "paham", // Jawa: mudeng -> paham
-  "tau": "tahu", "know": "tahu", "ngerti": "tahu", "weruh": "tahu/melihat", // Jawa: weruh -> tahu/melihat
-  "lwt": "lewat", "lewati": "lewati", "pass": "lewat", "liwat": "lewat", // Jawa: liwat -> lewat
-  "smpai": "sampai", "smpe": "sampai", "arrive": "sampai", "tekan": "sampai", // Jawa: tekan -> sampai
-  "msk": "masuk", "keluar": "keluar", "enter": "masuk", "exit": "keluar", "mlebu": "masuk", "metu": "keluar", // Jawa: mlebu, metu -> masuk, keluar
-  "naik": "naik", "turun": "turun", "up": "naik", "down": "turun", "munggah": "naik", "mudun": "turun", // Jawa: munggah, mudun -> naik, turun
-  "bntu": "bantu", "nolong": "menolong", "help": "bantu", "rewang": "bantu", // Jawa: rewang -> bantu
-  "mnta": "minta", "meminta": "meminta", "ask": "minta", "jaluk": "minta", "njaluk": "meminta", "nyuwun": "meminta (hormat)", // Jawa: jaluk, njaluk, nyuwun -> minta
-  "coba": "coba", "nyoba": "mencoba", "try": "coba", "jajal": "coba", "njajal": "mencoba", // Jawa: jajal, njajal -> coba
-  "lakuin": "lakukan", "ngerjain": "mengerjakan", "do": "lakukan", "nindakake": "melakukan", // Jawa: nindakake -> melakukan
-  "pke": "pakai", "make": "memakai", "use": "pakai", "nganggo": "memakai", // Jawa: nganggo -> memakai
-  "bwa": "bawa", "bw": "bawa", "bring": "bawa", "gowa": "bawa", "nggawa": "membawa", "asta": "membawa (hormat)", // Jawa: gowo, nggawa, asta -> bawa
-  "beli": "beli", "buy": "beli", "tuku": "beli", "mundhut": "membeli (hormat)", // Jawa: tuku, mundhut -> beli
-  "jual": "jual", "sell": "jual", "adol": "jual", "sade": "menjual (hormat)", // Jawa: adol, sade -> jual
-  "trima": "terima", "nerima": "menerima", "receive": "terima", "tompo": "terima", "nampa": "menerima", // Jawa: tompo, nampa -> terima
+  "cri": "cari", "nyari": "mencari", "find": "cari", "search": "cari", "golek": "cari", "nggoleki": "mencari",
+  "dpt": "dapat", "dapet": "dapat", "get": "dapat", "oleh": "dapat",
+  "ilang": "hilang", "kelangan": "kehilangan", "lost": "hilang", "ical": "hilang (hormat)",
+  "dtg": "datang", "dateng": "datang", "come": "datang", "teko": "datang", "rawuh": "datang (hormat)",
+  "plg": "pulang", "pulng": "pulang", "go home": "pulang", "bali": "pulang", "mulih": "pulang", "kondur": "pulang (hormat)",
+  "prgi": "pergi", "go": "pergi", "lungo": "pergi", "tindak": "pergi (hormat)",
+  "tggu": "tunggu", "nunggu": "menunggu", "wait": "tunggu", "enteni": "tunggu", "ngenteni": "menunggu",
+  "ngerti": "mengerti", "paham": "paham", "understand": "paham", "mudeng": "paham",
+  "tau": "tahu", "know": "tahu", "ngerti": "tahu", "weruh": "tahu/melihat",
+  "lwt": "lewat", "lewati": "lewati", "pass": "lewat", "liwat": "lewat",
+  "smpai": "sampai", "smpe": "sampai", "arrive": "sampai", "tekan": "sampai",
+  "msk": "masuk", "keluar": "keluar", "enter": "masuk", "exit": "keluar", "mlebu": "masuk", "metu": "keluar",
+  "naik": "naik", "turun": "turun", "up": "naik", "down": "turun", "munggah": "naik", "mudun": "turun",
+  "bntu": "bantu", "nolong": "menolong", "help": "bantu", "rewang": "bantu",
+  "mnta": "minta", "meminta": "meminta", "ask": "minta", "jaluk": "minta", "njaluk": "meminta", "nyuwun": "meminta (hormat)",
+  "coba": "coba", "nyoba": "mencoba", "try": "coba", "jajal": "coba", "njajal": "mencoba",
+  "lakuin": "lakukan", "ngerjain": "mengerjakan", "do": "lakukan", "nindakake": "melakukan",
+  "pke": "pakai", "make": "memakai", "use": "pakai", "nganggo": "memakai",
+  "bwa": "bawa", "bw": "bawa", "bring": "bawa", "gowa": "bawa", "nggawa": "membawa", "asta": "membawa (hormat)",
+  "beli": "beli", "buy": "beli", "tuku": "beli", "mundhut": "membeli (hormat)",
+  "jual": "jual", "sell": "jual", "adol": "jual", "sade": "menjual (hormat)",
+  "trima": "terima", "nerima": "menerima", "receive": "terima", "tompo": "terima", "nampa": "menerima",
   "krm": "kirim", "ngirim": "mengirim", "send": "kirim",
-  "lupa": "lupa", "forget": "lupa", "lali": "lupa", // Jawa: lali -> lupa
-  "ingat": "ingat", "remember": "ingat", "eling": "ingat", // Jawa: eling -> ingat
-  "mulai": "mulai", "start": "mulai", "wiwit": "mulai", // Jawa: wiwit -> mulai
-  "selesai": "selesai", "end": "selesai", "finish": "selesai", "kelar": "selesai", "rampung": "selesai", "bar": "selesai", // Jawa: rampung, bar -> selesai
-  "suka": "suka", "like": "suka", "seneng": "suka", "demen": "suka", // Jawa: seneng, demen -> suka
-  "benci": "benci", "hate": "benci", "gething": "benci", // Jawa: gething -> benci
-  "main": "main", "play": "main", "maen": "main", "dolan": "main", // Jawa: dolan -> main
-  "ngobrol": "mengobrol", "chat": "mengobrol", "bicara": "bicara", "speak": "bicara", "talk": "bicara", "omong": "bicara", "ngomong": "berbicara", "guneman": "berbicara", "ngendika": "berbicara (hormat)", // Jawa: omong, ngomong, guneman, ngendika
-  "denger": "dengar", "listen": "dengar", "hear": "dengar", "rungu": "dengar", "ngrungokake": "mendengarkan", "midhanget": "mendengarkan (hormat)", // Jawa: rungu, ngrungokake, midhanget
-  "tny": "tanya", "nanya": "bertanya", "ask": "tanya", "takon": "tanya", "nakoni": "bertanya", "ndangu": "bertanya (hormat)", // Jawa: takon, nakoni, ndangu
-  "jwb": "jawab", "njawab": "menjawab", "answer": "jawab", "wangsulan": "jawaban", // Jawa: wangsulan -> jawaban
+  "lupa": "lupa", "forget": "lupa", "lali": "lupa",
+  "ingat": "ingat", "remember": "ingat", "eling": "ingat",
+  "mulai": "mulai", "start": "mulai", "wiwit": "mulai",
+  "selesai": "selesai", "end": "selesai", "finish": "selesai", "kelar": "selesai", "rampung": "selesai", "bar": "selesai",
+  "suka": "suka", "like": "suka", "seneng": "suka", "demen": "suka",
+  "benci": "benci", "hate": "benci", "gething": "benci",
+  "main": "main", "play": "main", "maen": "main", "dolan": "main",
+  "ngobrol": "mengobrol", "chat": "mengobrol", "bicara": "bicara", "speak": "bicara", "talk": "bicara", "omong": "bicara", "ngomong": "berbicara", "guneman": "berbicara", "ngendika": "berbicara (hormat)",
+  "denger": "dengar", "listen": "dengar", "hear": "dengar", "rungu": "dengar", "ngrungokake": "mendengarkan", "midhanget": "mendengarkan (hormat)",
+  "tny": "tanya", "nanya": "bertanya", "ask": "tanya", "takon": "tanya", "nakoni": "bertanya", "ndangu": "bertanya (hormat)",
+  "jwb": "jawab", "njawab": "menjawab", "answer": "jawab", "wangsulan": "jawaban",
   "pikir": "pikir", "think": "pikir", "mikir": "berpikir",
-  "merasa": "merasa", "feel": "merasa", "rumangsa": "merasa", "ngrasa": "merasa", // Jawa: rumangsa, ngrasa
+  "merasa": "merasa", "feel": "merasa", "rumangsa": "merasa", "ngrasa": "merasa",
   "butuh": "butuh", "need": "butuh", "perlu": "perlu",
-  "ingin": "ingin", "pengen": "ingin", "pingin": "ingin", "want": "ingin", "kepengen": "ingin", "kepingin": "ingin", "arep": "akan/mau", // Jawa: arep -> akan/mau
-  "jemput": "jemput", "pick up": "jemput", "methuk": "jemput", // Jawa: methuk -> jemput
-  "antar": "antar", "anter": "antar", "drop off": "antar", "ngeterke": "mengantar", // Jawa: ngeterke -> mengantar
-  "masak": "masak", "cook": "masak", "nggoreng": "menggoreng", "nggodok": "merebus", // Jawa: nggoreng, nggodok
-  "cuci": "cuci", "wash": "cuci", "umbah": "cuci", "ngumbahi": "mencuci", // Jawa: umbah, ngumbahi
-  "baca": "baca", "read": "baca", "maca": "membaca", // Jawa: maca
-  "tulis": "tulis", "write": "tulis", "nulis": "menulis", // Jawa: nulis
-  "jalan": "jalan", "walk": "jalan", "mlaku": "jalan", // Jawa: mlaku
-  "lari": "lari", "run": "lari", "mlayu": "lari", // Jawa: mlayu
-  "berenang": "berenang", "swim": "berenang", "nglangi": "berenang", // Jawa: nglangi
+  "ingin": "ingin", "pengen": "ingin", "pingin": "ingin", "want": "ingin", "kepengen": "ingin", "kepingin": "ingin", "arep": "akan/mau",
+  "jemput": "jemput", "pick up": "jemput", "methuk": "jemput",
+  "antar": "antar", "anter": "antar", "drop off": "antar", "ngeterke": "mengantar",
+  "masak": "masak", "cook": "masak", "nggoreng": "menggoreng", "nggodok": "merebus",
+  "cuci": "cuci", "wash": "cuci", "umbah": "cuci", "ngumbahi": "mencuci",
+  "baca": "baca", "read": "baca", "maca": "membaca",
+  "tulis": "tulis", "write": "tulis", "nulis": "menulis",
+  "jalan": "jalan", "walk": "jalan", "mlaku": "jalan",
+  "lari": "lari", "run": "lari", "mlayu": "lari",
+  "berenang": "berenang", "swim": "berenang", "nglangi": "berenang",
   "nyetir": "menyetir", "drive": "menyetir", "nyopir": "menyetir",
-  "ikut": "ikut", "melu": "ikut", "nderek": "ikut (hormat)", // Jawa: melu, nderek
-  "naik": "naik", "numplak": "naik (kendaraan)", // Jawa: numpak
-  "mandi": "mandi", "adus": "mandi", // Jawa: adus
-  "duduk": "duduk", "lungguh": "duduk", "lenggah": "duduk (hormat)", // Jawa: lungguh, lenggah
-  "berdiri": "berdiri", "ngadeg": "berdiri", // Jawa: ngadeg
-  "terbang": "terbang", "mabur": "terbang", // Jawa: mabur
-  "jatuh": "jatuh", "tibo": "jatuh", // Jawa: tibo
-  "bangun": "bangun", "tangi": "bangun (tidur)", // Jawa: tangi
+  "ikut": "ikut", "melu": "ikut", "nderek": "ikut (hormat)",
+  "naik": "naik", "numplak": "naik (kendaraan)", "numpak": "naik (kendaraan)",
+  "mandi": "mandi", "adus": "mandi",
+  "duduk": "duduk", "lungguh": "duduk", "lenggah": "duduk (hormat)",
+  "berdiri": "berdiri", "ngadeg": "berdiri",
+  "terbang": "terbang", "mabur": "terbang",
+  "jatuh": "jatuh", "tibo": "jatuh",
+  "bangun": "bangun", "tangi": "bangun (tidur)",
   "sembahyang": "sembahyang", "sholat": "sholat",
 
-   // --- Kata Sifat & Keterangan ---
-  "bgt": "banget", "skli": "sekali", "amat": "amat", "very": "banget", "really": "banget", "tenan": "banget/serius", "pol": "banget (maksimal)", // Jawa: tenan, pol -> banget
-  "bnr": "benar", "bener": "benar", "btl": "betul", "true": "benar", "right": "benar", "leres": "benar (hormat)", // Jawa: leres -> benar
-  "slh": "salah", "wrong": "salah", "false": "salah", "keliru": "salah/keliru", // Jawa: keliru
-  "bgs": "bagus", "bgsd": "bagus", "good": "bagus", "nice": "bagus", "keren": "keren", "cool": "keren", "mantap": "mantap", "mantapp": "mantap", "awesome": "keren banget", "apik": "bagus", "sae": "bagus (hormat)", "jos": "bagus/mantap", // Jawa: apik, sae, jos -> bagus
-  "jlk": "jelek", "bad": "jelek", "ugly": "jelek", "elek": "jelek", // Jawa: elek -> jelek
+  "bgt": "banget", "skli": "sekali", "amat": "amat", "very": "banget", "really": "banget", "tenan": "banget/serius", "pol": "banget (maksimal)",
+  "bnr": "benar", "bener": "benar", "btl": "betul", "true": "benar", "right": "benar", "leres": "benar (hormat)",
+  "slh": "salah", "wrong": "salah", "false": "salah", "keliru": "salah/keliru",
+  "bgs": "bagus", "bgsd": "bagus", "good": "bagus", "nice": "bagus", "keren": "keren", "cool": "keren", "mantap": "mantap", "mantapp": "mantap", "awesome": "keren banget", "apik": "bagus", "sae": "bagus (hormat)", "jos": "bagus/mantap",
+  "jlk": "jelek", "bad": "jelek", "ugly": "jelek", "elek": "jelek",
   "cpt": "cepat", "cepet": "cepat", "fast": "cepat",
-  "lmbt": "lambat", "lama": "lama", "slow": "lambat", "suwe": "lama", // Jawa: suwe -> lama
-  "dkt": "dekat", "deket": "dekat", "near": "dekat", "cedak": "dekat", "celak": "dekat", // Jawa: cedak, celak
-  "jauh": "jauh", "far": "jauh", "adoh": "jauh", // Jawa: adoh
-  "byk": "banyak", "bnyak": "banyak", "many": "banyak", "much": "banyak", "a lot": "banyak", "akeh": "banyak", // Jawa: akeh
-  "sdkt": "sedikit", "dikit": "sedikit", "few": "sedikit", "little": "sedikit", "setitik": "sedikit", // Jawa: setitik
-  "lbh": "lebih", "more": "lebih", "luwih": "lebih", // Jawa: luwih
+  "lmbt": "lambat", "lama": "lama", "slow": "lambat", "suwe": "lama",
+  "dkt": "dekat", "deket": "dekat", "near": "dekat", "cedak": "dekat", "celak": "dekat",
+  "jauh": "jauh", "far": "jauh", "adoh": "jauh",
+  "byk": "banyak", "bnyak": "banyak", "many": "banyak", "much": "banyak", "a lot": "banyak", "akeh": "banyak",
+  "sdkt": "sedikit", "dikit": "sedikit", "few": "sedikit", "little": "sedikit", "setitik": "sedikit",
+  "lbh": "lebih", "more": "lebih", "luwih": "lebih",
   "krg": "kurang", "less": "kurang",
   "ckp": "cukup", "enough": "cukup",
-  "srg": "sering", "often": "sering", "kerep": "sering", // Jawa: kerep
+  "srg": "sering", "often": "sering", "kerep": "sering",
   "kdg": "kadang", "kdg2": "kadang-kadang", "sometimes": "kadang-kadang", "kadang": "kadang", "kadangkala": "kadang-kadang",
-  "jrg": "jarang", "seldom": "jarang", "rarely": "jarang", "arang": "jarang", // Jawa: arang
-  "psti": "pasti", "ykn": "yakin", "sure": "yakin", "certain": "pasti", "mesthi": "pasti", // Jawa: mesthi
-  "mngkn": "mungkin", "bsjd": "bisa jadi", "maybe": "mungkin", "perhaps": "mungkin", "mbokmenawa": "mungkin", // Jawa: mbokmenawa
-  "hrs": "harus", "wjb": "wajib", "must": "harus", "should": "seharusnya", "kudu": "harus", // Jawa: kudu
-  "prnh": "pernah", "ever": "pernah", "never": "tidak pernah", "tdk prnh": "tidak pernah", "tau": "pernah", "durung tau": "belum pernah", // Jawa: tau (pernah), durung tau
-  "blh": "boleh", "may": "boleh", "entuk": "boleh/dapat", // Jawa: entuk
-  "slalu": "selalu", "sll": "selalu", "senantiasa": "senantiasa", "always": "selalu", "tansah": "selalu", // Jawa: tansah
-  "br": "baru", "bru": "baru", "new": "baru", "anyar": "baru", // Jawa: anyar
-  "lama": "lama", "old": "lama", "lawas": "lama", // Jawa: lawas
+  "jrg": "jarang", "seldom": "jarang", "rarely": "jarang", "arang": "jarang",
+  "psti": "pasti", "ykn": "yakin", "sure": "yakin", "certain": "pasti", "mesthi": "pasti",
+  "mngkn": "mungkin", "bsjd": "bisa jadi", "maybe": "mungkin", "perhaps": "mungkin", "mbokmenawa": "mungkin",
+  "hrs": "harus", "wjb": "wajib", "must": "harus", "should": "seharusnya", "kudu": "harus",
+  "prnh": "pernah", "ever": "pernah", "never": "tidak pernah", "tdk prnh": "tidak pernah", "tau": "pernah", "durung tau": "belum pernah",
+  "blh": "boleh", "may": "boleh", "entuk": "boleh/dapat",
+  "slalu": "selalu", "sll": "selalu", "senantiasa": "senantiasa", "always": "selalu", "tansah": "selalu",
+  "br": "baru", "bru": "baru", "new": "baru", "anyar": "baru",
+  "lama": "lama", "old": "lama", "lawas": "lama",
   "lgsg": "langsung", "directly": "langsung",
-  "kyk": "kayak", "kek": "kayak", "spt": "seperti", "like": "seperti", "kaya": "seperti", "koyo": "seperti", // Jawa: koyo
-  "sm": "sama", "ama": "sama", "same": "sama", "padha": "sama", // Jawa: podho
-  "msh": "masih", "still": "masih", "isih": "masih", // Jawa: isih
-  "sdh": "sudah", "udh": "sudah", "dah": "sudah", "already": "sudah", "wis": "sudah", "sampun": "sudah (hormat)", // Jawa: wis, sampun
-  "gt": "gitu", "gitu": "gitu", "begitu": "begitu", "ngono": "begitu", // Jawa: ngono
-  "gini": "gini", "begini": "begini", "ngene": "begini", // Jawa: ngene
-  "bkn": "bukan", "not": "bukan", "dudu": "bukan", // Jawa: dudu
-  "iya": "iya", "y": "iya", "yo": "iya", "ok": "oke", "oke": "oke", "okey": "oke", "sip": "sip", "yes": "iya", "yeah": "iya", "yup": "iya", "nggeh": "iya (hormat)", "njih": "iya (hormat)", "heeh": "iya (santai)", // Jawa: nggeh, njih, heeh
-  "tdk": "tidak", "engga": "enggak", "enggak": "enggak", "gak": "enggak", "ngga": "enggak", "nggak": "enggak", "gk": "enggak", "no": "tidak", "nope": "tidak", "mboten": "tidak (hormat)", "ora": "tidak", // Jawa: mboten, ora
-  "kn": "kan", "kan": "kan", "to": "kan", // Jawa: to (partikel tanya/penegas)
-  "emg": "emang", "emang": "emang", "pancen": "emang/memang", // Jawa: pancen
-  "brt": "berat", "heavy": "berat", "abot": "berat", // Jawa: abot
-  "ringan": "ringan", "light": "ringan", "enteng": "ringan", // Jawa: enteng
-  "skt": "sakit", "sick": "sakit", "ill": "sakit", "lara": "sakit", "gerah": "sakit (hormat)", // Jawa: loro, gerah
-  "sehat": "sehat", "healthy": "sehat", "waras": "sehat/sembuh", // Jawa: waras
-  "cape": "capek", "cae": "capek", "lelah": "lelah", "tired": "capek", "kesel": "capek", // Jawa: kesel
-  "snang": "senang", "sneng": "senang", "happy": "senang", "bahagia": "bahagia", "glad": "senang", "bungah": "senang", // Jawa: bungah
-  "sedih": "sedih", "sad": "sedih", "galau": "galau", "upset": "sedih", "susah": "susah/sedih", // Jawa: susah
-  "males": "malas", "malas": "malas", "lazy": "malas", "mager": "malas gerak", "kesed": "malas", // Jawa: kesed
+  "kyk": "kayak", "kek": "kayak", "spt": "seperti", "like": "seperti", "kaya": "seperti", "koyo": "seperti",
+  "sm": "sama", "ama": "sama", "same": "sama", "padha": "sama", "podho": "sama",
+  "msh": "masih", "still": "masih", "isih": "masih",
+  "sdh": "sudah", "udh": "sudah", "dah": "sudah", "already": "sudah", "wis": "sudah", "sampun": "sudah (hormat)",
+  "gt": "gitu", "gitu": "gitu", "begitu": "begitu", "ngono": "begitu",
+  "gini": "gini", "begini": "begini", "ngene": "begini",
+  "bkn": "bukan", "not": "bukan", "dudu": "bukan",
+  "iya": "iyaa", "y": "iyaa", "yo": "iyaa", "ok": "oke", "oke": "oke", "okey": "oke", "sip": "sip", "yes": "iyaa", "yeah": "iyaa", "yup": "iyaa", "nggeh": "iya (hormat)", "njih": "iya (hormat)", "heeh": "iya (santai)",
+  "tdk": "tidak", "engga": "enggak", "enggak": "enggak", "gak": "enggak", "ngga": "enggak", "nggak": "enggak", "gk": "enggak", "no": "tidak", "nope": "tidak", "mboten": "tidak (hormat)", "ora": "tidak",
+  "kn": "kan", "kan": "kan",
+  "emg": "emang", "emang": "emang", "pancen": "emang/memang",
+  "brt": "berat", "heavy": "berat", "abot": "berat",
+  "ringan": "ringan", "light": "ringan", "enteng": "ringan",
+  "skt": "sakit", "sick": "sakit", "ill": "sakit", "lara": "sakit", "gerah": "sakit (hormat)", "loro": "sakit",
+  "sehat": "sehat", "healthy": "sehat", "waras": "sehat/sembuh",
+  "cape": "capek", "cae": "capek", "lelah": "lelah", "tired": "capek", "kesel": "capek",
+  "snang": "senang", "sneng": "senang", "happy": "senang", "bahagia": "bahagia", "glad": "senang", "bungah": "senang", "seneng": "senang",
+  "sedih": "sedih", "sad": "sedih", "galau": "galau", "upset": "sedih", "susah": "susah/sedih",
+  "males": "malas", "malas": "malas", "lazy": "malas", "mager": "malas gerak", "kesed": "malas",
   "gabut": "sedang bosan", "bored": "bosan", "jenuh": "jenuh",
   "mantul": "mantap betul", "mantep": "mantap",
-  "gpp": "gapapa", "gpapa": "gapapa", "its ok": "gapapa", "no problem": "gapapa", "rapopo": "gapapa", // Jawa: rapopo
+  "gpp": "gapapa", "gpapa": "gapapa", "its ok": "gapapa", "no problem": "gapapa", "rapopo": "gapapa",
   "penting": "penting", "important": "penting",
-  "ga penting": "tidak penting", "unimportant": "tidak penting", "rasah": "tidak usah", // Jawa: rasah
-  "susah": "susah", "sulit": "sulit", "difficult": "sulit", "angel": "sulit", // Jawa: angel
-  "gampang": "gampang", "mudah": "mudah", "easy": "mudah", "gampil": "mudah", // Jawa: gampil
+  "ga penting": "tidak penting", "unimportant": "tidak penting", "rasah": "tidak usah",
+  "susah": "susah", "sulit": "sulit", "difficult": "sulit", "angel": "sulit",
+  "gampang": "gampang", "mudah": "mudah", "easy": "mudah", "gampil": "mudah",
   "murah": "murah", "cheap": "murah",
-  "mahal": "mahal", "expensive": "mahal", "larang": "mahal", // Jawa: larang
-  "besar": "besar", "big": "besar", "gede": "besar", "ageng": "besar (hormat)", // Jawa: gedhe, ageng
-  "kecil": "kecil", "small": "kecil", "cilik": "kecil", "alit": "kecil (hormat)", // Jawa: cilik, alit
-  "panjang": "panjang", "long": "panjang", "dawa": "panjang", // Jawa: dowo
-  "pendek": "pendek", "short": "pendek", "cendak": "pendek", // Jawa: cendhak
-  "tinggi": "tinggi", "high": "tinggi", "tall": "tinggi", "duwur": "tinggi", // Jawa: dhuwur
-  "rendah": "rendah", "low": "rendah", "cendhek": "rendah/pendek", // Jawa: cendhek
-  "kosong": "kosong", "empty": "kosong", "suwung": "kosong", // Jawa: suwung
-  "penuh": "penuh", "full": "penuh", "kebak": "penuh", // Jawa: kebak
+  "mahal": "mahal", "expensive": "mahal", "larang": "mahal",
+  "besar": "besar", "big": "besar", "gede": "besar", "ageng": "besar (hormat)", "gedhe": "besar",
+  "kecil": "kecil", "small": "kecil", "cilik": "kecil", "alit": "kecil (hormat)",
+  "panjang": "panjang", "long": "panjang", "dawa": "panjang", "dowo": "panjang",
+  "pendek": "pendek", "short": "pendek", "cendak": "pendek", "cendhak": "pendek",
+  "tinggi": "tinggi", "high": "tinggi", "tall": "tinggi", "duwur": "tinggi", "dhuwur": "tinggi",
+  "rendah": "rendah", "low": "rendah", "cendhek": "rendah/pendek",
+  "kosong": "kosong", "empty": "kosong", "suwung": "kosong",
+  "penuh": "penuh", "full": "penuh", "kebak": "penuh",
   "terbuka": "terbuka", "buka": "buka", "open": "terbuka", "mbukak": "membuka",
   "tutup": "tutup", "closed": "tutup", "nutup": "menutup",
   "ramai": "ramai", "crowded": "ramai", "rame": "ramai",
-  "sepi": "sepi", "quiet": "sepi", "nyenyet": "sepi", // Jawa: nyenyet
-  "berisik": "berisik", "noisy": "berisik", "rame": "berisik", // Rame bisa ramai/berisik
-  "tenang": "tenang", "calm": "tenang", "anteng": "tenang", // Jawa: anteng
+  "sepi": "sepi", "quiet": "sepi", "nyenyet": "sepi",
+  "berisik": "berisik", "noisy": "berisik", "rame": "berisik",
+  "tenang": "tenang", "calm": "tenang", "anteng": "tenang",
   "pintar": "pintar", "pinter": "pintar", "smart": "pintar", "cerdas": "cerdas",
-  "bodoh": "bodoh", "bego": "bodoh", "stupid": "bodoh", "goblok": "bodoh", "ndeso": "kampungan/bodoh", // Jawa: ndeso
-  "cantik": "cantik", "cakep": "cakep", "ganteng": "ganteng", "beautiful": "cantik", "handsome": "ganteng", "pretty": "cantik", "ayu": "cantik", // Jawa: ayu
+  "bodoh": "bodoh", "bego": "bodoh", "stupid": "bodoh", "goblok": "bodoh", "ndeso": "kampungan/bodoh",
+  "cantik": "cantik", "cakep": "cakep", "ganteng": "ganteng", "beautiful": "cantik", "handsome": "ganteng", "pretty": "cantik", "ayu": "cantik",
   "lucu": "lucu", "funny": "lucu", "cute": "lucu", "gemes": "gemas",
-  "serius": "serius", "serious": "serius", "tenan": "serius",
-  "bercanda": "bercanda", "joking": "bercanda", "guyon": "bercanda", // Jawa: guyon
-  "takut": "takut", "afraid": "takut", "scared": "takut", "wedi": "takut", // Jawa: wedi
-  "berani": "berani", "brave": "berani", "wani": "berani", // Jawa: wani
-  "malu": "malu", "shy": "malu", "ashamed": "malu", "isin": "malu", // Jawa: isin
-  "kenyang": "kenyang", "wareg": "kenyang", // Jawa: wareg
-  "lapar": "lapar", "laper": "lapar", "hungry": "lapar", "luwe": "lapar", // Jawa: luwe
-  "haus": "haus", "thirsty": "haus", "ngelak": "haus", // Jawa: ngelak
+  "serius": "serius", "serious": "serius",
+  "bercanda": "bercanda", "joking": "bercanda", "guyon": "bercanda",
+  "takut": "takut", "afraid": "takut", "scared": "takut", "wedi": "takut",
+  "berani": "berani", "brave": "berani", "wani": "berani",
+  "malu": "malu", "shy": "malu", "ashamed": "malu", "isin": "malu",
+  "kenyang": "kenyang", "wareg": "kenyang",
+  "lapar": "lapar", "laper": "lapar", "hungry": "lapar", "luwe": "lapar",
+  "haus": "haus", "thirsty": "haus", "ngelak": "haus",
   "random": "random", "acak": "acak", "aneh": "aneh",
   "valid": "valid", "sah": "sah",
   "santuy": "santai", "santai": "santai",
-  "parah": "parah", "parahh": "parah", " nemen": "parah/sangat", // Jawa: nemen -> parah/sangat
-  "hangat": "hangat", "warm": "hangat", "dingin": "dingin", "cold": "dingin", "adem": "dingin/sejuk", // Jawa: adem
-  "basah": "basah", "wet": "basah", "kering": "kering", "dry": "kering", "garing": "kering", // Jawa: garing
-  "kotor": "kotor", "dirty": "kotor", "bersih": "bersih", "clean": "bersih", "resik": "bersih", // Jawa: resik
-  "terang": "terang", "bright": "terang", "padang": "terang", // Jawa: padang
-  "gelap": "gelap", "dark": "gelap", "peteng": "gelap", // Jawa: peteng
-  "manis": "manis", "sweet": "manis", "legi": "manis", // Jawa: legi
+  "parah": "parah", "parahh": "parah", " nemen": "parah/sangat",
+  "hangat": "hangat", "warm": "hangat", "dingin": "dingin", "cold": "dingin", "adem": "dingin/sejuk",
+  "basah": "basah", "wet": "basah", "teles": "basah", // Jawa: teles
+  "kering": "kering", "dry": "kering", "garing": "kering",
+  "kotor": "kotor", "dirty": "kotor", "reged": "kotor", // Jawa: reged
+  "bersih": "bersih", "clean": "bersih", "resik": "bersih",
+  "terang": "terang", "bright": "terang", "padang": "terang",
+  "gelap": "gelap", "dark": "gelap", "peteng": "gelap",
+  "manis": "manis", "sweet": "manis", "legi": "manis",
   "pahit": "pahit", "bitter": "pahit", "pait": "pahit",
   "asin": "asin", "salty": "asin",
-  "asam": "asam", "sour": "asam", "kecut": "asam", // Jawa: kecut
-  "pedas": "pedas", "spicy": "pedas",
-  "enak": "enak", "delicious": "enak", "sedap": "sedap", "nikmat": "nikmat", "eco": "enak", // Jawa: eco
+  "asam": "asam", "sour": "asam", "kecut": "asam",
+  "pedas": "pedas", "spicy": "pedas", "pedes": "pedas",
+  "enak": "enak", "delicious": "enak", "sedap": "sedap", "nikmat": "nikmat", "eco": "enak",
   "capek": "capek",
 
-   // --- Ekspresi, Interjeksi & Slang Internet/Populer ---
-  "wkwk": "wkwk", "wkwkwk": "wkwk", "haha": "haha", "hehe": "hehe", "xixi": "hehe", "kwkwkwk": "wkwk", "wkakaka": "wkwk", "lol": "wkwk", "lmao": "wkwk", "ngakak": "wkwk",
-  "astaga": "astaga", "astaghfirullah": "astaghfirullah", "yaampun": "ya ampun", "ya Allah": "Ya Allah", "omg": "ya ampun", " Gusti": "ya Tuhan", // Jawa: Gusti -> Tuhan
-  "anjir": "astaga", "anjay": "astaga", "anjrit": "astaga", "kampret": "astaga", "buset": "astaga", "jir": "astaga", "jancuk": "astaga", "cok": "astaga", "asu": "astaga", // Replace harsh slang incl. Jawa Cok/Asu
-  "asik": "asik", "seru": "seru", "fun": "seru", "hore": "hore",
+  "wkwk": "wkwk", "wkwkwk": "wkwk", "haha": "haha", "hehe": "hehe", "xixi": "hehe", "kwkwkwk": "wkwk", "wkakaka": "wkwk", "lol": "wkwk", "lmao": "wkwk", "ngakak": "wkwk", "wk": "wkwk",
+  "astaga": "astaga", "astaghfirullah": "astaghfirullah", "yaampun": "ya ampun", "ya Allah": "Ya Allah", "omg": "ya ampun", " Gusti": "ya Tuhan",
+  "anjir": "astaga", "anjay": "astaga", "anjrit": "astaga", "kampret": "astaga", "buset": "astaga", "jir": "astaga", "jancuk": "astaga", "cok": "astaga", "asu": "astaga", "su": "astaga", "cuk": "astaga",
+  "asik": "asik", "seru": "seru", "fun": "seru", "hore": "hore", "asoy": "asik",
   "syukurlah": "syukurlah", "alhamdulillah": "alhamdulillah", "puji Tuhan": "puji Tuhan",
-  "smg": "semoga", "moga": "semoga", "wish": "semoga", "amin": "aamiin", "aamiin": "aamiin", "mugi": "semoga", "mugia": "semoga", // Jawa: mugi, mugia
-  "syg": "sayang", "cinta": "cinta", "love": "cinta", "dear": "sayang", "tresna": "cinta", // Jawa: tresno
-  "maap": "maaf", "mf": "maaf", "sorry": "maaf", "maafin": "maafin", "punten": "maaf", "ngapunten": "maaf (hormat)", // Sunda/Jawa: punten, ngapunten
-  "thx": "terima kasih", "tq": "terima kasih", "makasi": "terima kasih", "makasih": "terima kasih", "nuwun": "terima kasih", "thanks": "terima kasih", "thank you": "terima kasih", "matur nuwun": "terima kasih (hormat)", "matur suwun": "terima kasih", // Jawa: nuwun, matur nuwun, matur suwun
-  "pls": "tolong", "plis": "tolong", "tlng": "tolong", "please": "tolong", "tulung": "tolong", // Jawa: tulung
-  "slmt": "selamat", "congrats": "selamat", "congratulations": "selamat", "slmt dtg": "selamat datang", "welcome": "selamat datang", "sugeng rawuh": "selamat datang (hormat)", // Jawa: sugeng rawuh
-  "met pagi": "selamat pagi", "met siang": "selamat siang", "met sore": "selamat sore", "met malam": "selamat malam", "met ultah": "selamat ulang tahun", "hbd": "selamat ulang tahun", "ultah": "ulang tahun", "birthday": "ulang tahun", "sugeng enjing": "selamat pagi (hormat)", "sugeng siyang": "selamat siang (hormat)", "sugeng sonten": "selamat sore (hormat)", "sugeng dalu": "selamat malam (hormat)", // Jawa: Sugeng...
-  "salam kenal": "salam kenal", "salken": "salam kenal", "tepangaken": "perkenalkan", // Jawa: tepangaken -> perkenalkan
+  "smg": "semoga", "moga": "semoga", "wish": "semoga", "amin": "aamiin", "aamiin": "aamiin", "mugi": "semoga", "mugia": "semoga",
+  "syg": "sayang", "cinta": "cinta", "love": "cinta", "dear": "sayang", "tresna": "cinta", "tresno": "cinta",
+  "maap": "maaf", "mf": "maaf", "sorry": "maaf", "maafin": "maafin", "punten": "maaf", "ngapunten": "maaf (hormat)", "sepurane": "maaf", // Jawa: sepurane
+  "thx": "terima kasih", "tq": "terima kasih", "makasi": "terima kasih", "makasih": "terima kasih", "nuwun": "terima kasih", "thanks": "terima kasih", "thank you": "terima kasih", "matur nuwun": "terima kasih (hormat)", "matur suwun": "terima kasih", "mksh": "terima kasih", "maksih": "terima kasih",
+  "pls": "tolong", "plis": "tolong", "tlng": "tolong", "please": "tolong", "tulung": "tolong",
+  "slmt": "selamat", "congrats": "selamat", "congratulations": "selamat", "slmt dtg": "selamat datang", "welcome": "selamat datang", "sugeng rawuh": "selamat datang (hormat)",
+  "met pagi": "selamat pagi", "met siang": "selamat siang", "met sore": "selamat sore", "met malam": "selamat malam", "met ultah": "selamat ulang tahun", "hbd": "selamat ulang tahun", "ultah": "ulang tahun", "birthday": "ulang tahun", "sugeng enjing": "selamat pagi (hormat)", "sugeng siyang": "selamat siang (hormat)", "sugeng sonten": "selamat sore (hormat)", "sugeng dalu": "selamat malam (hormat)",
+  "salam kenal": "salam kenal", "salken": "salam kenal", "tepangaken": "perkenalkan",
   "btw": "ngomong-ngomong", "by the way": "ngomong-ngomong",
   "otw": "sedang di jalan", "on my way": "sedang di jalan",
   "imho": "menurutku", "imo": "menurutku", "in my opinion": "menurutku",
   "afaik": "setahuku", "as far as i know": "setahuku",
   "istg": "astaga", "i swear to god": "astaga",
   "irl": "di dunia nyata", "in real life": "di dunia nyata",
-  "dll": "dan lain-lain", "etc": "dan lain-lain", "et cetera": "dan lain-lain", "lsp": "dan sebagainya", // lsp = lan sapiturute (Jawa)
-  "lho": "lho", "loh": "lho", "kok": "kok", "sih": "sih", "dong": "dong", "donk": "dong", "deh": "deh", "nih": "nih", "tuh": "tuh", "to": "to", "og": "og", // Jawa: to, og (partikel)
-  "sumpah": "serius", "demi apa": "serius", "beneran": "serius", "tenan": "serius",
+  "dll": "dan lain-lain", "etc": "dan lain-lain", "et cetera": "dan lain-lain", "lsp": "dan sebagainya",
+  "lho": "lho", "loh": "lho", "kok": "kok", "sih": "sih", "dong": "dong", "donk": "dong", "deh": "deh", "nih": "nih", "tuh": "tuh", "to": "to", "og": "og",
+  "sumpah": "serius", "demi apa": "serius", "beneran": "serius",
   "baper": "terbawa perasaan",
-  "bokek": "tidak punya uang", "kere": "tidak punya uang", "ora duwe duit": "tidak punya uang", // Jawa: ora duwe duit
+  "bokek": "tidak punya uang", "kere": "tidak punya uang", "ora duwe duit": "tidak punya uang",
   "hoax": "berita bohong", "fake news": "berita bohong",
-  "cringe": "memalukan", "isin": "malu",
-  "healing": "jalan-jalan", "dolan": "jalan-jalan/main",
+  "cringe": "memalukan",
+  "healing": "jalan-jalan",
   "pov": "sudut pandang",
   "spill": "ceritakan", "spill the tea": "ceritakan", "bocorin": "bocorkan",
   "nolep": "kurang pergaulan", "no life": "kurang pergaulan",
   "fomo": "takut ketinggalan", "fear of missing out": "takut ketinggalan",
   "ygy": "ya guys ya", "yoi": "iya/oke",
   "typo": "salah ketik", "saltik": "salah ketik",
-  "gaje": "tidak jelas", "gj": "tidak jelas", "ora jelas": "tidak jelas", // Jawa: ora jelas
+  "gaje": "tidak jelas", "gj": "tidak jelas", "ora jelas": "tidak jelas",
   "japri": "chat pribadi", "pm": "chat pribadi", "dm": "chat pribadi",
   "kepo": "ingin tahu urusan orang",
-  "lebay": "berlebihan",
-  "alay": "norak", "ndeso": "norak",
+  "lebay": "berlebihan", "over": "berlebihan",
+  "alay": "norak",
   "mabar": "main bareng",
   "pansos": "panjat sosial",
   "gercep": "gerak cepat",
-  "hadeh": "aduh", "alah": "aduh",
+  "hadeh": "aduh", "alah": "aduh", "haduh": "aduh",
   "ytta": "yang tahu-tahu aja",
-  "komuk": "muka", "rai": "muka", // Jawa: rai
-  "sambad": "mengeluh", "sambat": "mengeluh", // Jawa: sambat
-  "hy": "hai", "hallo": "halo", "helo": "halo", "heyy": "hai", "woy": "hei", "cuk": "cuk (sapaan akrab/kasar)", "dab": "mas/bro (sapaan Jogja)", // Jogja: Dab
-  "okd": "oke deh", "okelah": "okelah", "yaudah": "ya sudah", "yowis": "ya sudah", // Jawa: yowis
-  "monggo": "silakan", // Jawa: monggo
-  "nuwun sewu": "permisi", // Jawa: nuwun sewu
-  "permisi": "permisi",
+  "komuk": "muka", "rai": "muka",
+  "sambad": "mengeluh", "sambat": "mengeluh",
+  "hy": "hai", "hallo": "halo", "helo": "halo", "heyy": "hai", "woy": "hei", "cuk": "cuk", "dab": "mas/bro",
+  "okd": "oke deh", "okelah": "okelah", "yaudah": "ya sudah", "yowis": "ya sudah", "wis": "sudah",
+  "monggo": "silakan",
+  "nuwun sewu": "permisi",
+  "permisi": "permisi", "amit": "permisi", // Jawa: amit
 
-   // --- Lain-lain & Typo Umum ---
-  "jg": "juga", "jga": "juga", "too": "juga", "also": "juga", "ugo": "juga", // Jawa: ugo
+  "jg": "juga", "jga": "juga", "too": "juga", "also": "juga", "ugo": "juga",
   "brg": "bareng", "bareng": "bareng", "karo": "bareng",
   "no": "nomor", "nmr": "nomor", "number": "nomor",
   "hp": "ponsel", "hape": "ponsel", "phone": "ponsel",
-  "rmh": "rumah", "home": "rumah", "house": "rumah", "griya": "rumah (hormat)", "omah": "rumah", // Jawa: griyo, omah
-  "duit": "uang", "cuan": "uang", "money": "uang", "arta": "uang (hormat)", "duwit": "uang", // Jawa: arto, duwit
+  "rmh": "rumah", "home": "rumah", "house": "rumah", "griya": "rumah (hormat)", "omah": "rumah",
+  "duit": "uang", "cuan": "uang", "money": "uang", "arta": "uang (hormat)", "duwit": "uang", "yatra": "uang (hormat)",
   "mbl": "mobil", "car": "mobil",
-  "mtr": "motor", "motorcycle": "motor", "pit": "sepeda/motor", // Jawa: pit
-  "jln": "jalan", "street": "jalan", "road": "jalan", "dalan": "jalan", "margi": "jalan (hormat)", // Jawa: dalan, margi
+  "mtr": "motor", "motorcycle": "motor", "pit": "sepeda/motor",
+  "jln": "jalan", "street": "jalan", "road": "jalan", "dalan": "jalan", "margi": "jalan (hormat)",
   "dgn": "dengan", "with": "dengan",
   "krja": "kerja", "kja": "kerja",
   "skolah": "sekolah", "skul": "sekolah", "school": "sekolah",
   "kampus": "kampus", "kuliah": "kuliah", "kulyah": "kuliah", "college": "kampus", "university": "kampus",
   "tpi": "tapi",
-  "syapa": "siapa", "syp": "siapa", "sopo": "siapa", // Jawa: sopo
-  "trus": "terus", "trs": "terus", "then": "terus", "banjur": "terus/lalu", // Jawa: banjur
+  "syapa": "siapa", "syp": "siapa", "sopo": "siapa",
+  "trus": "terus", "trs": "terus", "then": "terus", "banjur": "terus/lalu",
   "banget": "banget", "banged": "banget", "bangett": "banget", "bnget": "banget",
-  "iyaa": "iyaa", "iya": "iyaa", // Pastikan iya jadi iyaa
+  "iya": "iyaa", "iyaa": "iyaa",
   "okee": "oke", "ok": "oke",
-  "makasihh": "terima kasih", "makasih": "terima kasih",
+  "makasihh": "terima kasih", "makasih": "terima kasih", "mksh": "terima kasih",
   "the": "", "a": "", "an": "",
-  "is": "", "are": "", "am": "", // Hapus BE verbs sederhana
-  "jan": "memang/sungguh", // Partikel Jawa: jan
-  "gek": "kok/segera", // Partikel Jawa: gek
-  "pokoke": "pokoknya", // Jawa: pokoke
+  "is": "", "are": "", "am": "",
+  "jan": "memang/sungguh",
+  "gek": "kok/segera",
+  "pokoke": "pokoknya",
   "wae lah": "saja lah",
-  "dab": "mas/bro" // Penguatan Dab Jogja
+  "dab": "mas/bro",
+  "og": "kok/memang",
+  "podo": "sama"
 }
-
