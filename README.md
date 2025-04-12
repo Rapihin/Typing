@@ -50,10 +50,7 @@ Jika Anda ingin menjalankan proyek ini di komputer Anda sendiri:
 
 1.  **Clone repositori ini:**
     ```bash
-    git clone [URL-REPO-ANDA] 
-    # Ganti [URL-REPO-ANDA] dengan URL repo GitHub Anda (contoh: [https://github.com/rapihin/typing.git](https://github.com/rapihin/typing.git))
-    cd [NAMA-FOLDER-REPO] 
-    # Ganti [NAMA-FOLDER-REPO] dengan nama folder hasil clone (contoh: typing)
+    git clone https://github.com/rapihin/typing.git
     ```
 2.  **Jalankan melalui Web Server Lokal:** Karena proyek ini menggunakan `Workspace()` untuk memuat `kamus.json`, Anda **tidak bisa** membukanya langsung dengan double-click file `index.html`. Anda perlu menjalankannya via server lokal. Contoh:
     * **Menggunakan Python:**
@@ -72,7 +69,7 @@ Jika Anda ingin menjalankan proyek ini di komputer Anda sendiri:
 
 ## 📄 Lisensi
 
-Proyek ini dilisensikan di bawah [LISENSI_ANDA, contoh: MIT License]. 
+MIT License
 ---
 
 Dibuat dengan bantuan dan eksplorasi bersama AI. Selamat mencoba! 😊
