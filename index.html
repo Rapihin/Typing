@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Ganteng Generator ✨</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Typing Ganteng Generator ✨ v2</title> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
 
@@ -22,6 +21,8 @@
             --card-bg-color: #ffffff;
             --shadow-color: rgba(0, 0, 0, 0.1);
             --icon-color: var(--primary-color);
+            --success-color: #48bb78; /* Hijau untuk sukses */
+            --error-color: #f56565; /* Merah untuk error */
 
             --font-body: 'Inter', sans-serif;
             --font-heading: 'Space Grotesk', sans-serif; /* Atau 'Playfair Display' */
@@ -42,6 +43,8 @@
                 --card-bg-color: #2d3748;
                 --shadow-color: rgba(0, 0, 0, 0.4);
                 --icon-color: var(--primary-color);
+                --success-color: #68d391;
+                --error-color: #fc8181;
             }
         }
 
@@ -171,6 +174,7 @@
             gap: 1rem;
             margin-top: 1rem;
             justify-content: flex-end; /* Align buttons to the right */
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens if needed */
         }
 
         button {
@@ -181,17 +185,24 @@
             border: none;
             border-radius: 50px; /* Tombol bulat */
             cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, color 0.2s ease;
             position: relative; /* For potential ripple later */
             overflow: hidden; /* For potential ripple later */
+            white-space: nowrap; /* Prevent text wrapping inside button */
         }
 
         #generateButton {
             background-color: var(--primary-color);
             color: #fff;
         }
+        #generateButton:disabled {
+            background-color: var(--secondary-color);
+            color: var(--secondary-text-color);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
 
-        #generateButton:hover {
+        #generateButton:hover:not(:disabled) {
             background-color: var(--primary-hover-color);
             transform: translateY(-2px); /* Sedikit loncat */
             box-shadow: 0 4px 10px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3);
@@ -201,13 +212,27 @@
             background-color: var(--secondary-color);
             color: var(--secondary-text-color);
         }
+         #copyButton:disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
 
-        #copyButton:hover {
+        #copyButton:hover:not(:disabled) {
             background-color: var(--border-color);
             transform: translateY(-2px); /* Sedikit loncat */
         }
+         /* Status feedback styles */
+        #copyButton.success {
+            background-color: var(--success-color);
+            color: #fff;
+        }
+        #copyButton.error {
+             background-color: var(--error-color);
+             color: #fff;
+        }
 
-        button:active {
+
+        button:active:not(:disabled) {
            transform: translateY(0px) scale(0.98); /* Efek "ditekan" */
            box-shadow: none;
         }
@@ -225,10 +250,9 @@
             line-height: 1.7; /* Slightly more spacious */
             white-space: pre-wrap; /* Preserve line breaks and spaces */
             word-wrap: break-word; /* Prevent overflow */
-            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity 0.4s ease, transform 0.4s ease;
             opacity: 0; /* Initially hidden, shown on generate */
             transform: scale(0.98); /* Start slightly smaller */
-            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
         #outputResult.visible {
@@ -265,10 +289,16 @@
             button {
                 padding: 0.7rem 1.5rem;
                 font-size: 0.9rem;
+                 width: 100%; /* Make buttons full width on small screens */
             }
             .button-group {
                 flex-direction: column; /* Stack buttons on small screens */
                 align-items: stretch; /* Make buttons full width */
+                 gap: 0.75rem; /* Adjust gap for stacked buttons */
+            }
+            .input-section .button-group,
+            .output-section .button-group {
+                 margin-top: 1rem;
             }
         }
     </style>
@@ -282,12 +312,12 @@
             </svg>
 
             <h1>Typing Ganteng Generator ✨</h1>
-            <p>Ubah gaya tulisanmu jadi lebih rapi, santai, sopan, dan kekinian ala Typing Ganteng!</p>
+            <p>Ubah gaya tulisanmu jadi lebih rapi, santai, sopan, dan kekinian ala Typing Ganteng! (Kamus diperbanyak)</p>
         </header>
 
         <div class="input-section">
             <label for="inputText">Teks Asli Kamu:</label>
-            <textarea id="inputText" rows="5" placeholder="Contoh: aq capeek bgt hr ini wkwkwkwkw tp seneng jg sih..."></textarea>
+            <textarea id="inputText" rows="5" placeholder="Contoh: aq capeek bgt hr ini wkwkwkwkw tp seneng jg sih... btw, met ultah ya! hbd"></textarea>
             <div class="button-group">
                  <button id="generateButton">✨ Generate Typing Ganteng</button>
             </div>
@@ -314,13 +344,18 @@
         copyButton.addEventListener('click', handleCopy);
         inputText.addEventListener('input', () => {
              // Enable generate button only if there's input
-            generateButton.disabled = inputText.value.trim() === '';
-            // Reset output if input changes
+            const hasInput = inputText.value.trim() !== '';
+            generateButton.disabled = !hasInput;
+
+            // Reset output and copy button if input changes and output was visible
             if (outputResult.classList.contains('visible')) {
                 outputResult.classList.remove('visible');
-                outputResult.textContent = 'Hasil akan muncul di sini...';
+                 setTimeout(() => { // Delay slightly to allow animation out
+                    outputResult.textContent = 'Hasil akan muncul di sini...';
+                 }, 150); // Should be less than animation duration
                 copyButton.textContent = 'Salin Hasil';
                 copyButton.disabled = true;
+                copyButton.className = ''; // Reset button style
             }
         });
 
@@ -331,75 +366,187 @@
 
             let result = text.toLowerCase().trim(); // Lowercase and trim whitespace
 
-            // 1. Common Slang Replacements (Gunakan \b untuk word boundaries)
+            // 1. Expanded Slang Replacements (Gunakan \b untuk word boundaries)
+            // NOTE: Menambahkan 10,000 kata secara manual tidak praktis & membebani performa.
+            // Kamus ini diperbanyak dengan singkatan & slang umum Indonesia.
             const slangMap = {
-                'aq': 'aku', 'sy': 'saya', 'gw': 'aku', 'gue': 'aku', // Variasi 'aku'
+                // --- Identitas ---
+                'aq': 'aku', 'sy': 'saya', 'gw': 'aku', 'gue': 'aku', 'gua': 'aku', 'ane': 'aku',
+                'km': 'kamu', 'klian': 'kalian', 'anda': 'kamu', 'loe': 'kamu', 'lu': 'kamu', 'antum': 'kamu',
+                'dia': 'dia', 'doi': 'dia', 'beliau': 'beliau', // 'doi' -> 'dia'
+                'kita': 'kita', 'kami': 'kami',
+                'org': 'orang', 'tmn': 'teman', 'temen': 'teman', 'kwn': 'kawan', 'sahabat': 'sahabat',
+
+                // --- Waktu & Tanggal ---
                 'td': 'tadi', 'ntr': 'nanti', 'ntar': 'nanti',
-                'lg': 'lagi', 'sdg': 'sedang',
-                'bgt': 'banget', 'skli': 'sekali',
-                'km': 'kamu', 'klian': 'kalian', 'anda': 'kamu', // Lebih santai
-                'yg': 'yang', 'utk': 'untuk', 'dgn': 'dengan',
-                'ga': 'enggak', 'gak': 'enggak', 'ngga': 'enggak', 'nggak': 'enggak', 'gk': 'enggak',
-                'udah': 'sudah', 'udh': 'sudah',
-                'jg': 'juga', 'jga': 'juga',
-                'sm': 'sama', 'ama': 'sama',
+                'skrg': 'sekarang', 'skrng': 'sekarang', 'rn': 'sekarang',
                 'dl': 'dulu', 'dlu': 'dulu',
-                'skrg': 'sekarang', 'skrng': 'sekarang',
-                'kyk': 'kayak', 'kek': 'kayak',
-                'blm': 'belum', 'blom': 'belum',
-                'gpp': 'gapapa', 'gpapa': 'gapapa',
-                'knp': 'kenapa', 'napa': 'kenapa',
+                'kpn': 'kapan',
+                'bntr': 'sebentar',
+                'hr': 'hari', 'hri': 'hari', 'senin': 'Senin', 'selasa': 'Selasa', 'rabu': 'Rabu', 'kamis': 'Kamis', 'jumat': 'Jumat', 'sabtu': 'Sabtu', 'minggu': 'Minggu', // Proper case days
+                'tgl': 'tanggal',
+                'bln': 'bulan', 'jan': 'Januari', 'feb': 'Februari', 'mar': 'Maret', 'apr': 'April', 'mei': 'Mei', 'jun': 'Juni', 'jul': 'Juli', 'ags': 'Agustus', 'sep': 'September', 'okt': 'Oktober', 'nov': 'November', 'des': 'Desember', // Proper case months
+                'thn': 'tahun', 'taun': 'tahun',
+                'malem': 'malam', 'mlm': 'malam',
+                'pagi': 'pagi', 'siang': 'siang', 'sore': 'sore',
+                'weekend': 'akhir pekan', 'weekday': 'hari kerja',
+
+                 // --- Kata Tanya & Sambung ---
+                'yg': 'yang', 'utk': 'untuk', 'dgn': 'dengan', 'dg': 'dengan',
                 'dr': 'dari', 'dri': 'dari',
-                'trs': 'terus', 'trus': 'terus',
-                'bnr': 'benar', 'bener': 'benar',
-                'bs': 'bisa', 'bsa': 'bisa',
+                'kmn': 'kemana', 'dmn': 'dimana', 'dimn': 'dimana',
+                'gmn': 'gimana', 'gmana': 'gimana', // Biarkan 'gimana' untuk gaya santai
+                'knp': 'kenapa', 'napa': 'kenapa',
                 'brp': 'berapa',
-                'byk': 'banyak',
-                'hr': 'hari', 'hri': 'hari',
-                'krn': 'karena', 'karna': 'karena',
-                'sbb': 'sebab', 'sbg': 'sebagai',
-                'tmn': 'teman', 'temen': 'teman',
-                'mkn': 'makan',
-                'lgsg': 'langsung',
-                'emg': 'emang',
+                'bgmn': 'bagaimana', // Lebih formal jika diperlukan
+                'drpd': 'daripada',
+                'klo': 'kalau', 'kl': 'kalau', 'kalo': 'kalau',
+                'ato': 'atau', 'atw': 'atau',
+                'krn': 'karena', 'karna': 'karena', 'sbb': 'sebab',
+                'sblm': 'sebelum', 'sblmnya': 'sebelumnya',
+                'stlh': 'setelah', 'stlhnya': 'setelahnya',
+                'jd': 'jadi',
+                'tp': 'tapi', 'tpi': 'tapi',
+                'agr': 'agar',
+                'spy': 'supaya',
+                'pdhl': 'padahal',
+                'wlpn': 'walaupun', 'meski': 'meskipun', 'mskpn': 'meskipun',
+                'serta': 'serta', 'dan': 'dan',
+
+                 // --- Kata Kerja Umum ---
+                'lg': 'lagi', 'sdg': 'sedang',
+                'blg': 'bilang', 'ngomong': 'bilang', // 'ngomong' -> 'bilang'
+                'liat': 'lihat', 'liht': 'lihat', 'nntn': 'nonton',
+                'mkn': 'makan', 'sarapan': 'sarapan', 'maksi': 'makan siang',
+                'ksh': 'kasih', 'beri': 'beri',
+                'blm': 'belum', 'blom': 'belum', 'bloman': 'belum',
+                'bs': 'bisa', 'bsa': 'bisa',
+                'tdr': 'tidur',
+                'krj': 'kerja', 'ngantor': 'ke kantor', 'wfh': 'kerja dari rumah', 'wfo': 'kerja dari kantor',
+                'bljr': 'belajar', 'nugas': 'mengerjakan tugas',
+                'byr': 'bayar', 'byrin': 'bayarin',
+                'cri': 'cari', 'nyari': 'mencari',
+                'dpt': 'dapat', 'dapet': 'dapat',
+                'ilang': 'hilang', 'kelangan': 'kehilangan',
+                'dtg': 'datang', 'dateng': 'datang',
+                'plg': 'pulang', 'pulng': 'pulang',
+                'prgi': 'pergi',
+                'tggu': 'tunggu', 'nunggu': 'menunggu',
+                'ngerti': 'mengerti', 'paham': 'paham',
+                'tau': 'tahu', // Careful, use word boundary
+                'lwt': 'lewat', 'lewati': 'lewati',
+                'smpai': 'sampai', 'smpe': 'sampai',
+                'msk': 'masuk', 'keluar': 'keluar',
+                'naik': 'naik', 'turun': 'turun',
+                'bntu': 'bantu', 'nolong': 'menolong',
+                'mnta': 'minta', 'meminta': 'meminta',
+                'coba': 'coba', 'nyoba': 'mencoba',
+                'lakuin': 'lakukan', 'ngerjain': 'mengerjakan',
+                'pke': 'pakai', 'make': 'memakai',
+                'bwa': 'bawa',
+
+                // --- Kata Sifat & Keterangan ---
+                'bgt': 'banget', 'skli': 'sekali', 'amat': 'amat',
+                'bnr': 'benar', 'bener': 'benar', 'btl': 'betul',
+                'slh': 'salah',
+                'bgs': 'bagus', 'bgsd': 'bagus', // Handle variasi typo
+                'jlk': 'jelek',
+                'cpt': 'cepat', 'cepet': 'cepat',
+                'lmbt': 'lambat', 'lama': 'lama',
+                'dkt': 'dekat', 'deket': 'dekat',
+                'jauh': 'jauh',
+                'byk': 'banyak', 'bnyak': 'banyak',
+                'sdkt': 'sedikit', 'dikit': 'sedikit',
+                'lbh': 'lebih',
+                'krg': 'kurang',
+                'ckp': 'cukup',
+                'srg': 'sering', 'kdg': 'kadang', 'kdgkala': 'kadang-kadang',
+                'jrg': 'jarang',
+                'psti': 'pasti', 'ykn': 'yakin',
+                'mngkn': 'mungkin', 'bsjd': 'bisa jadi', 'keknya': 'kayaknya', 'kyknya': 'kayaknya',
+                'hrs': 'harus', 'wjb': 'wajib',
+                'prnh': 'pernah',
+                'blh': 'boleh',
+                'slalu': 'selalu', 'sll': 'selalu', 'senantiasa': 'senantiasa',
                 'br': 'baru', 'bru': 'baru',
-                'sdh': 'sudah',
-                'tuh': 'itu', // 'tuh' jadi 'itu'
-                'nih': 'ini', // 'nih' jadi 'ini'
-                'lho': 'lho', // Pertahankan 'lho' atau variasinya
-                'loh': 'lho',
-                'kok': 'kok', // Pertahankan 'kok'
-                'sih': 'sih', // Pertahankan 'sih'
-                 'dong': 'dong', // Pertahankan 'dong'
-                'deh': 'deh' // Pertahankan 'deh'
+                'lgsg': 'langsung',
+                'kyk': 'kayak', 'kek': 'kayak', 'spt': 'seperti',
+                'sm': 'sama', 'ama': 'sama',
+                'msh': 'masih',
+                'sdh': 'sudah', 'udh': 'sudah',
+                'gt': 'gitu', 'gitu': 'gitu', // Normalize 'gt' -> 'gitu'
+                'gini': 'gini', // Keep 'gini'
+                'bkn': 'bukan',
+                'iya': 'iya', 'y': 'iya', 'yo': 'iya', 'ok': 'oke', 'oke': 'oke', 'okey': 'oke', 'sip': 'sip', // Normalize affirmatives
+                'tdk': 'tidak', 'engga': 'enggak', 'enggak': 'enggak', // Normalize negatives
+                'ga': 'enggak', 'gak': 'enggak', 'ngga': 'enggak', 'nggak': 'enggak', 'gk': 'enggak', // More negatives
+                'kn': 'kan', // Keep 'kan'
+                'emg': 'emang', // Keep 'emang'
+                'brt': 'berat', 'ringan': 'ringan',
+                'skt': 'sakit', 'sehat': 'sehat',
+                'cape': 'capek', 'cae': 'capek', 'lelah': 'lelah', // Normalize 'cape'
+                'snang': 'senang', 'sneng': 'senang', 'happy': 'senang', 'bahagia': 'bahagia',
+                'sdh': 'sedih', 'galau': 'galau',
+                'males': 'malas', 'mager': 'malas gerak', // 'mager' defined
+                'gabut': 'sedang bosan', // 'gabut' defined
+                'mantul': 'mantap betul', // 'mantul' defined
+                'gpp': 'gapapa', 'gpapa': 'gapapa', 'gpp': 'gapapa', // Normalize 'gapapa'
+
+                // --- Ekspresi & Interjeksi ---
+                'wkwk': 'wkwk', 'wkwkwk': 'wkwk', 'haha': 'haha', 'hehe': 'hehe', 'xixi': 'hehe', // Normalize laughter
+                'astaga': 'astaga', 'astaghfirullah': 'astaghfirullah', 'yaampun': 'ya ampun',
+                'anjir': 'astaga', 'anjay': 'astaga', 'anjrit': 'astaga', 'kampret': 'astaga', // Replace harsh slang
+                'asik': 'asik', 'seru': 'seru',
+                'syukurlah': 'syukurlah', 'alhamdulillah': 'alhamdulillah',
+                'smg': 'semoga', 'moga': 'semoga', 'amin': 'aamiin', // Normalize doa
+                'syg': 'sayang', 'cinta': 'cinta',
+                'maap': 'maaf', 'mf': 'maaf', 'sorry': 'maaf', // Normalize apologies
+                'thx': 'terima kasih', 'tq': 'terima kasih', 'makasi': 'terima kasih', 'makasih': 'terima kasih', 'nuwun': 'terima kasih', // Normalize thanks
+                'pls': 'tolong', 'plis': 'tolong', 'tlng': 'tolong', // Normalize requests
+                'slmt': 'selamat', 'congrats': 'selamat', 'slmt dtg': 'selamat datang',
+                'met pagi': 'selamat pagi', 'met siang': 'selamat siang', 'met sore': 'selamat sore', 'met malam': 'selamat malam', 'met ultah': 'selamat ulang tahun', 'hbd': 'selamat ulang tahun', 'ultah': 'ulang tahun',
+                'salam kenal': 'salam kenal', 'salken': 'salam kenal',
+                'btw': 'ngomong-ngomong', 'otw': 'sedang di jalan', // Common internet slang
+                'imho': 'menurutku', 'afaik': 'setahuku', 'istg': 'astaga', 'irl': 'di dunia nyata',
+                'dll': 'dan lain-lain', 'etc': 'dan lain-lain',
+                'lho': 'lho', 'loh': 'lho', 'kok': 'kok', 'sih': 'sih', 'dong': 'dong', 'deh': 'deh', 'nih': 'nih', 'tuh': 'tuh', // Pertahankan partikel khas
+
+                // --- Lain-lain ---
+                'jg': 'juga', 'jga': 'juga',
+                'brg': 'bareng', // Assume 'brg' means 'bareng'
+                'no': 'nomor', // 'no' -> 'nomor'
+                'hp': 'ponsel', // 'hp' -> 'ponsel' (lebih formal)
+                'rmh': 'rumah',
+                'duit': 'uang', 'cuan': 'uang', // Slang uang
+                'mbl': 'mobil', 'mtr': 'motor',
+                'jln': 'jalan',
             };
 
+
             for (const key in slangMap) {
-                // Regex: \b(key)\b -> Match whole word only
-                const regex = new RegExp(`\\b${key}\\b`, 'g');
+                // Regex: \b(key)\b -> Match whole word only, case insensitive 'i'
+                // Pastikan key di-escape jika mengandung karakter khusus regex
+                const escapedKey = key.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+                const regex = new RegExp(`\\b${escapedKey}\\b`, 'gi'); // 'g' for global, 'i' for case-insensitive
                 result = result.replace(regex, slangMap[key]);
             }
 
             // 2. Reduce Repeating Characters (Max 2 consecutive identical letters)
-            // Example: "capeeekkk" -> "capeekk", "iyaaa" -> "iyaa"
             result = result.replace(/([a-zA-Z])\1{2,}/g, '$1$1');
+            // Khusus untuk tawa, pastikan tetap wkwk/hehe/haha
+            result = result.replace(/wk(wk)+/gi, 'wkwk');
+            result = result.replace(/he(he)+/gi, 'hehe');
+            result = result.replace(/ha(ha)+/gi, 'haha');
+            result = result.replace(/xi(xi)+/gi, 'hehe'); // xixi -> hehe
 
-            // Khusus untuk 'wkwk' dan 'hehe' (sering dipanjangkan)
-            result = result.replace(/wk(wk)+/g, 'wkwk');
-            result = result.replace(/he(he)+/g, 'hehe');
-            result = result.replace(/ha(ha)+/g, 'haha');
 
-
-            // 3. Soften Vowels (Add extra vowel if appropriate) - Hati-hati, jangan berlebihan
-            result = result.replace(/\b(iya|oh|wah|aduh|halo|hai)\b/g, '$1a'); // iyaa, oha, waha, aduha, haloa, haia (hati-hati)
-            result = result.replace(/\b(masa|apa|kenapa|gimana)\b/g, '$1a'); // masaa, apaa, kenapaa, gimanaa
-            result = result.replace(/\b(kamu|aku|itu|ini)\b/g, '$1u'); // kamuu, akuu, ituu, iniu (mungkin kurang cocok)
-             // Revisi: Cukup tambahkan 'a' di akhir kata tertentu yang umum
-            result = result.replace(/\b(iya|masa|apa|kenapa|gimana|oh|wah|aduh|halo|hai)(?![a-z])/g, '$1a'); // Hanya jika di akhir kata
+            // 3. Soften Vowels (Add extra vowel 'a' or 'u' carefully)
+            // Hanya tambahkan jika kata di akhir atau diikuti spasi/tanda baca
+             result = result.replace(/\b(iya|masa|apa|kenapa|gimana|wah|oh|aduh|halo|hai|situ|sini)(?![a-z])/gi, '$1a');
+             // result = result.replace(/\b(kamu|aku|itu|ini)(?![a-z])/gi, '$1u'); // Opsi 'u', bisa jadi aneh
 
 
             // 4. Punctuation Handling (Minimal & Contextual)
-            // Remove excessive punctuation first
             result = result.replace(/([.,?!~;:]){2,}/g, '$1'); // "!!" -> "!", ",,," -> ","
             result = result.replace(/\.{4,}/g, '...'); // More than 3 dots become ellipsis
             result = result.replace(/(\s*\.\s*){3,}/g, '...'); // Handle spaced dots like ". . ."
@@ -407,35 +554,39 @@
             result = result.replace(/([.,?!~;:])(?=\S)/g, '$1 '); // Add space after punctuation if needed
 
              // Ensure sentence ends with appropriate punctuation or a gentle tilde/emoji
-            if (!/[.?!~]$/.test(result.trim())) {
-                 if (result.endsWith('wkwk') || result.endsWith('hehe') || result.endsWith('haha')) {
-                    result += ''; // Biarkan tanpa titik jika diakhiri tawa
-                 } else if (Math.random() < 0.4) { // 40% chance for tilde
-                     result += '~';
-                 } else {
-                    result += '.'; // Default to period
+             const trimmedResult = result.trim();
+            if (!/[.?!~]$/.test(trimmedResult) && !/(wkwk|hehe|haha)$/.test(trimmedResult)) {
+                 if (trimmedResult.length > 0) { // Only add if there is content
+                    if (trimmedResult.endsWith('terima kasih') || trimmedResult.endsWith('maaf') || trimmedResult.endsWith('tolong')) {
+                         result += '.'; // Add period after polite phrases
+                     } else if (Math.random() < 0.4) { // 40% chance for tilde
+                        result += '~';
+                     } else {
+                        result += '.'; // Default to period
+                     }
                  }
             }
 
-            // 5. Capitalization (Sentence case)
-            // Capitalize the first letter of the entire text
-             result = result.charAt(0).toUpperCase() + result.slice(1);
-             // Optional: Capitalize after sentence-ending punctuation? (lebih kompleks)
-             // result = result.replace(/([.?!~]\s+)([a-z])/g, (match, p1, p2) => p1 + p2.toUpperCase());
+
+            // 5. Capitalization (Sentence case - first letter only)
+            // Capitalize the first letter of the entire text if it exists
+             if (result.length > 0) {
+                 result = result.charAt(0).toUpperCase() + result.slice(1);
+             }
 
 
-            // 6. Optional: Add Emoji (^^ atau hehe)
-            // Tambahkan jika tidak diakhiri tanda baca spesifik atau tawa
-            if (!/[.?!~]$/.test(result.trim()) && !/(wkwk|hehe|haha)$/.test(result.trim())) {
-                 if (Math.random() < 0.5) {
-                     result += ' ^^';
-                 } else {
-                     // result += ' hehe'; // Alternatif
-                 }
-            } else if (/[.?!~]$/.test(result.trim()) && Math.random() < 0.2) {
-                // Kadang tambahkan emoji bahkan setelah tanda baca (20% chance)
-                 result += ' ^^';
-            }
+             // 6. Optional: Add Emoji (^^ atau hehe) - Kurangi frekuensi
+             const endsWithPunctuation = /[.?!~]$/.test(result.trim());
+             const endsWithLaughter = /(wkwk|hehe|haha)$/.test(result.trim());
+             if (!endsWithPunctuation && !endsWithLaughter && result.length > 0) {
+                 // Add ^^ if no punctuation and no laughter, but less often (20% chance)
+                  if (Math.random() < 0.2) {
+                      result += ' ^^';
+                  }
+             } else if (endsWithPunctuation && Math.random() < 0.1) {
+                 // Very rarely add ^^ after punctuation (10% chance)
+                  result += ' ^^';
+             }
 
 
             // 7. Final Trim and Cleanup
@@ -451,32 +602,86 @@
 
             outputResult.textContent = gantengText || 'Tidak ada teks untuk diubah...'; // Tampilkan hasil atau pesan default
             outputResult.classList.add('visible'); // Animasikan tampilan hasil
-            copyButton.disabled = !gantengText; // Enable copy button jika ada hasil
+            copyButton.disabled = !gantengText || gantengText === 'Tidak ada teks untuk diubah...'; // Enable copy button jika ada hasil valid
             copyButton.textContent = 'Salin Hasil'; // Reset teks tombol salin
+            copyButton.className = ''; // Reset button style
         }
 
+        // --- MODIFIED handleCopy with Fallback ---
         function handleCopy() {
             const textToCopy = outputResult.textContent;
-            if (!textToCopy || textToCopy === 'Hasil akan muncul di sini...') {
-                return; // Jangan salin jika tidak ada hasil
+            if (!textToCopy || textToCopy === 'Hasil akan muncul di sini...' || copyButton.disabled) {
+                return; // Jangan salin jika tidak ada hasil atau tombol disabled
             }
 
-            navigator.clipboard.writeText(textToCopy).then(() => {
-                // Sukses menyalin
-                copyButton.textContent = 'Berhasil Disalin! ✅';
-                setTimeout(() => {
-                    copyButton.textContent = 'Salin Hasil';
-                }, 2000); // Reset teks tombol setelah 2 detik
-            }).catch(err => {
-                // Gagal menyalin (misal: di environment tidak aman/http)
-                console.error('Gagal menyalin teks: ', err);
-                copyButton.textContent = 'Gagal Menyalin ❌';
-                 setTimeout(() => {
-                    copyButton.textContent = 'Salin Hasil';
-                }, 2000);
-                // Di sini bisa ditambahkan fallback method jika diperlukan (deprecated)
-            });
+            // --- Try Modern API First (navigator.clipboard) ---
+            if (navigator.clipboard && window.isSecureContext) { // Check if API available and context is secure (HTTPS/localhost)
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopyFeedback(true); // Sukses
+                }).catch(err => {
+                    console.warn('Modern Clipboard API gagal, mencoba fallback:', err);
+                    copyFallback(textToCopy); // Coba fallback jika gagal
+                });
+            } else {
+                // --- Fallback for non-secure contexts or older browsers ---
+                 console.warn('Modern Clipboard API tidak tersedia, menggunakan fallback.');
+                 copyFallback(textToCopy);
+            }
         }
+
+        // --- Fallback Copy Function using document.execCommand ---
+        function copyFallback(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+
+            // Make textarea invisible and out of viewport
+            textArea.style.position = 'fixed';
+            textArea.style.top = '-9999px';
+            textArea.style.left = '-9999px';
+            textArea.style.opacity = '0';
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopyFeedback(true); // Sukses
+                } else {
+                     showCopyFeedback(false); // Gagal
+                     console.error('Fallback: Gagal menyalin dengan execCommand');
+                }
+            } catch (err) {
+                showCopyFeedback(false); // Gagal
+                console.error('Fallback: Error saat execCommand:', err);
+            }
+
+            document.body.removeChild(textArea); // Hapus textarea sementara
+        }
+
+        // --- Function to show feedback on copy button ---
+        function showCopyFeedback(success) {
+            if (success) {
+                copyButton.textContent = 'Berhasil Disalin!';
+                copyButton.classList.add('success');
+                copyButton.classList.remove('error');
+            } else {
+                copyButton.textContent = 'Gagal Menyalin';
+                copyButton.classList.add('error');
+                 copyButton.classList.remove('success');
+            }
+
+            // Reset button after 2 seconds
+             setTimeout(() => {
+                copyButton.textContent = 'Salin Hasil';
+                copyButton.className = ''; // Reset class
+                // Re-check if output is valid to set disabled state correctly
+                 const gantengText = outputResult.textContent;
+                 copyButton.disabled = !gantengText || gantengText === 'Tidak ada teks untuk diubah...';
+            }, 2000);
+        }
+
 
         // --- Initial State ---
         generateButton.disabled = true; // Disable generate initially
