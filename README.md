@@ -1,6 +1,6 @@
 # Typing Ganteng Generator ✨
 
-[![Typing Ganteng Generator Screenshot](Screen.png)]([https://rapihin.github.io/typing]) 
+[![Typing Ganteng Generator Screenshot](Screen.png)](https://rapihin.github.io/typing) 
 > Alat bantu online sederhana untuk mengubah gaya tulisan chat/santai/alay menjadi lebih rapi, sopan, tetap santai, dan keren ala "Typing Ganteng" yang sedang tren.
 
 Website ini dibuat menggunakan HTML, CSS, dan JavaScript murni (Vanilla JS) dengan fokus pada pemrosesan di sisi klien (client-side).
@@ -8,7 +8,9 @@ Website ini dibuat menggunakan HTML, CSS, dan JavaScript murni (Vanilla JS) deng
 ## 🚀 Live Demo
 
 Coba langsung aplikasinya di sini:
-**[Typing Ganteng Generator Live]([URL-GITHUB-PAGES-ANDA])** *(Catatan: Performa saat pertama kali memuat mungkin memerlukan sedikit waktu karena memuat kamus kata.)*
+**[Typing Ganteng Generator Live](https://rapihin.github.io/typing)**
+
+*(Catatan: Performa saat pertama kali memuat mungkin memerlukan sedikit waktu karena memuat kamus kata yang cukup besar.)*
 
 ## ✨ Fitur Utama
 
@@ -35,7 +37,8 @@ Coba langsung aplikasinya di sini:
 
 ## 🛠️ Cara Menggunakan
 
-1.  Kunjungi [link live demo]([URL-GITHUB-PAGES-ANDA]). 2.  Tunggu sebentar hingga kamus selesai dimuat (tombol Generate akan aktif).
+1.  Kunjungi [link live demo](https://rapihin.github.io/typing).
+2.  Tunggu sebentar hingga kamus selesai dimuat (tombol Generate akan aktif).
 3.  Ketik atau tempel teks asli Anda di kotak input pertama.
 4.  Klik tombol "✨ Generate Typing Ganteng".
 5.  Hasil konversi akan muncul di kotak output di bawahnya.
@@ -48,10 +51,11 @@ Jika Anda ingin menjalankan proyek ini di komputer Anda sendiri:
 1.  **Clone repositori ini:**
     ```bash
     git clone [URL-REPO-ANDA] 
-    # Ganti [URL-REPO-ANDA] dengan URL repo GitHub Anda
-    cd [NAMA-FOLDER-REPO]
+    # Ganti [URL-REPO-ANDA] dengan URL repo GitHub Anda (contoh: [https://github.com/rapihin/typing.git](https://github.com/rapihin/typing.git))
+    cd [NAMA-FOLDER-REPO] 
+    # Ganti [NAMA-FOLDER-REPO] dengan nama folder hasil clone (contoh: typing)
     ```
-2.  **Jalankan melalui Web Server Lokal:** Karena proyek ini menggunakan `Workspace()` untuk memuat `kamus.json`, Anda **tidak bisa** membukanya langsung dengan double-click file `index.html` (karena akan terkena masalah CORS). Anda perlu menjalankannya via server lokal. Contoh:
+2.  **Jalankan melalui Web Server Lokal:** Karena proyek ini menggunakan `Workspace()` untuk memuat `kamus.json`, Anda **tidak bisa** membukanya langsung dengan double-click file `index.html`. Anda perlu menjalankannya via server lokal. Contoh:
     * **Menggunakan Python:**
         ```bash
         # Jika punya Python 3
@@ -64,7 +68,7 @@ Jika Anda ingin menjalankan proyek ini di komputer Anda sendiri:
 
 * Kamus kata disimpan dalam format JSON di file `kamus.json`.
 * Saat ini berisi sekitar 1800+ entri pasangan kata kunci dan nilai penggantinya.
-* File ini dimuat secara asinkron saat halaman dibuka. Ukuran file ini mempengaruhi waktu loading awal dan performa proses konversi.
+* File ini dimuat secara asinkron saat halaman dibuka. Ukuran file ini mempengaruhi waktu loading awal dan performa proses konversi (mungkin terasa jeda saat generate).
 
 ## 📄 Lisensi
 
