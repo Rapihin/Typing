@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Ganteng Generator ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Variables (Konfigurasi Tema) --- */
+        :root {
+            --bg-color: #f4f7f9; /* Sedikit off-white */
+            --text-color: #333;
+            --heading-color: #1a202c;
+            --primary-color: #4a90e2; /* Biru lembut */
+            --primary-hover-color: #357ABD;
+            --secondary-color: #e2e8f0; /* Abu-abu muda untuk input/output */
+            --secondary-text-color: #4a5568;
+            --border-color: #cbd5e0;
+            --card-bg-color: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --icon-color: var(--primary-color);
+
+            --font-body: 'Inter', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif; /* Atau 'Playfair Display' */
+
+            --transition-speed: 0.3s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #1a202c;
+                --text-color: #e2e8f0;
+                --heading-color: #f7fafc;
+                --primary-color: #63b3ed; /* Biru lebih cerah di dark mode */
+                --primary-hover-color: #4299e1;
+                --secondary-color: #2d3748;
+                --secondary-text-color: #a0aec0;
+                --border-color: #4a5568;
+                --card-bg-color: #2d3748;
+                --shadow-color: rgba(0, 0, 0, 0.4);
+                --icon-color: var(--primary-color);
+            }
+        }
+
+        /* --- Reset & Basic Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align top */
+            min-height: 100vh;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        /* --- Layout Container --- */
+        .container {
+            background-color: var(--card-bg-color);
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: background-color var(--transition-speed) ease;
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(20px); /* Start slightly lower */
+            animation: fadeInUp 0.6s ease-out forwards; /* Animation */
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        header .icon-typing {
+            width: 60px;
+            height: auto;
+            color: var(--icon-color);
+            margin-bottom: 0.5rem;
+            transition: color var(--transition-speed) ease;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem; /* Ukuran heading besar */
+            line-height: 1.2; /* Line-height longgar */
+            color: var(--heading-color);
+            transition: color var(--transition-speed) ease;
+        }
+
+        header p {
+            color: var(--secondary-text-color);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            transition: color var(--transition-speed) ease;
+        }
+
+        /* --- Input & Output Sections --- */
+        .input-section,
+        .output-section {
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s 0.2s ease-out forwards; /* Staggered animation */
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--heading-color);
+            transition: color var(--transition-speed) ease;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical; /* Allow vertical resize */
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3); /* Use RGB for opacity */
+        }
+
+        /* Utility to parse primary color to RGB for focus shadow */
+        body:has(:root) {
+          --primary-color-rgb: 74, 144, 226; /* Default RGB for #4a90e2 */
+        }
+        @media (prefers-color-scheme: dark) {
+          body:has(:root) {
+             --primary-color-rgb: 99, 179, 237; /* RGB for #63b3ed */
+          }
+        }
+
+
+        /* --- Buttons --- */
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            justify-content: flex-end; /* Align buttons to the right */
+        }
+
+        button {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.8rem 1.8rem; /* Padding lebar */
+            border: none;
+            border-radius: 50px; /* Tombol bulat */
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+            position: relative; /* For potential ripple later */
+            overflow: hidden; /* For potential ripple later */
+        }
+
+        #generateButton {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        #generateButton:hover {
+            background-color: var(--primary-hover-color);
+            transform: translateY(-2px); /* Sedikit loncat */
+            box-shadow: 0 4px 10px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3);
+        }
+
+        #copyButton {
+            background-color: var(--secondary-color);
+            color: var(--secondary-text-color);
+        }
+
+        #copyButton:hover {
+            background-color: var(--border-color);
+            transform: translateY(-2px); /* Sedikit loncat */
+        }
+
+        button:active {
+           transform: translateY(0px) scale(0.98); /* Efek "ditekan" */
+           box-shadow: none;
+        }
+
+        /* --- Output Area --- */
+        #outputResult {
+            width: 100%;
+            min-height: 100px;
+            padding: 1rem;
+            border: 1px dashed var(--border-color); /* Dashed border */
+            border-radius: 8px;
+            background-color: var(--secondary-color);
+            color: var(--text-color); /* Use default text color for output */
+            font-size: 1rem;
+            line-height: 1.7; /* Slightly more spacious */
+            white-space: pre-wrap; /* Preserve line breaks and spaces */
+            word-wrap: break-word; /* Prevent overflow */
+            transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            opacity: 0; /* Initially hidden, shown on generate */
+            transform: scale(0.98); /* Start slightly smaller */
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        #outputResult.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+            button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .button-group {
+                flex-direction: column; /* Stack buttons on small screens */
+                align-items: stretch; /* Make buttons full width */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <svg class="icon-typing" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+            </svg>
+
+            <h1>Typing Ganteng Generator ✨</h1>
+            <p>Ubah gaya tulisanmu jadi lebih rapi, santai, sopan, dan kekinian ala Typing Ganteng!</p>
+        </header>
+
+        <div class="input-section">
+            <label for="inputText">Teks Asli Kamu:</label>
+            <textarea id="inputText" rows="5" placeholder="Contoh: aq capeek bgt hr ini wkwkwkwkw tp seneng jg sih..."></textarea>
+            <div class="button-group">
+                 <button id="generateButton">✨ Generate Typing Ganteng</button>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <label for="outputResult">Hasil Typing Ganteng:</label>
+            <div id="outputResult" aria-live="polite">Hasil akan muncul di sini...</div> <div class="button-group">
+                 <button id="copyButton" disabled>Salin Hasil</button>
+             </div>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Get DOM Elements ---
+        const inputText = document.getElementById('inputText');
+        const generateButton = document.getElementById('generateButton');
+        const outputResult = document.getElementById('outputResult');
+        const copyButton = document.getElementById('copyButton');
+
+        // --- Event Listeners ---
+        generateButton.addEventListener('click', handleGenerate);
+        copyButton.addEventListener('click', handleCopy);
+        inputText.addEventListener('input', () => {
+             // Enable generate button only if there's input
+            generateButton.disabled = inputText.value.trim() === '';
+            // Reset output if input changes
+            if (outputResult.classList.contains('visible')) {
+                outputResult.classList.remove('visible');
+                outputResult.textContent = 'Hasil akan muncul di sini...';
+                copyButton.textContent = 'Salin Hasil';
+                copyButton.disabled = true;
+            }
+        });
+
+
+        // --- Core Conversion Logic ---
+        function generateTypingGanteng(text) {
+            if (!text) return ''; // Handle empty input
+
+            let result = text.toLowerCase().trim(); // Lowercase and trim whitespace
+
+            // 1. Common Slang Replacements (Gunakan \b untuk word boundaries)
+            const slangMap = {
+                'aq': 'aku', 'sy': 'saya', 'gw': 'aku', 'gue': 'aku', // Variasi 'aku'
+                'td': 'tadi', 'ntr': 'nanti', 'ntar': 'nanti',
+                'lg': 'lagi', 'sdg': 'sedang',
+                'bgt': 'banget', 'skli': 'sekali',
+                'km': 'kamu', 'klian': 'kalian', 'anda': 'kamu', // Lebih santai
+                'yg': 'yang', 'utk': 'untuk', 'dgn': 'dengan',
+                'ga': 'enggak', 'gak': 'enggak', 'ngga': 'enggak', 'nggak': 'enggak', 'gk': 'enggak',
+                'udah': 'sudah', 'udh': 'sudah',
+                'jg': 'juga', 'jga': 'juga',
+                'sm': 'sama', 'ama': 'sama',
+                'dl': 'dulu', 'dlu': 'dulu',
+                'skrg': 'sekarang', 'skrng': 'sekarang',
+                'kyk': 'kayak', 'kek': 'kayak',
+                'blm': 'belum', 'blom': 'belum',
+                'gpp': 'gapapa', 'gpapa': 'gapapa',
+                'knp': 'kenapa', 'napa': 'kenapa',
+                'dr': 'dari', 'dri': 'dari',
+                'trs': 'terus', 'trus': 'terus',
+                'bnr': 'benar', 'bener': 'benar',
+                'bs': 'bisa', 'bsa': 'bisa',
+                'brp': 'berapa',
+                'byk': 'banyak',
+                'hr': 'hari', 'hri': 'hari',
+                'krn': 'karena', 'karna': 'karena',
+                'sbb': 'sebab', 'sbg': 'sebagai',
+                'tmn': 'teman', 'temen': 'teman',
+                'mkn': 'makan',
+                'lgsg': 'langsung',
+                'emg': 'emang',
+                'br': 'baru', 'bru': 'baru',
+                'sdh': 'sudah',
+                'tuh': 'itu', // 'tuh' jadi 'itu'
+                'nih': 'ini', // 'nih' jadi 'ini'
+                'lho': 'lho', // Pertahankan 'lho' atau variasinya
+                'loh': 'lho',
+                'kok': 'kok', // Pertahankan 'kok'
+                'sih': 'sih', // Pertahankan 'sih'
+                 'dong': 'dong', // Pertahankan 'dong'
+                'deh': 'deh' // Pertahankan 'deh'
+            };
+
+            for (const key in slangMap) {
+                // Regex: \b(key)\b -> Match whole word only
+                const regex = new RegExp(`\\b${key}\\b`, 'g');
+                result = result.replace(regex, slangMap[key]);
+            }
+
+            // 2. Reduce Repeating Characters (Max 2 consecutive identical letters)
+            // Example: "capeeekkk" -> "capeekk", "iyaaa" -> "iyaa"
+            result = result.replace(/([a-zA-Z])\1{2,}/g, '$1$1');
+
+            // Khusus untuk 'wkwk' dan 'hehe' (sering dipanjangkan)
+            result = result.replace(/wk(wk)+/g, 'wkwk');
+            result = result.replace(/he(he)+/g, 'hehe');
+            result = result.replace(/ha(ha)+/g, 'haha');
+
+
+            // 3. Soften Vowels (Add extra vowel if appropriate) - Hati-hati, jangan berlebihan
+            result = result.replace(/\b(iya|oh|wah|aduh|halo|hai)\b/g, '$1a'); // iyaa, oha, waha, aduha, haloa, haia (hati-hati)
+            result = result.replace(/\b(masa|apa|kenapa|gimana)\b/g, '$1a'); // masaa, apaa, kenapaa, gimanaa
+            result = result.replace(/\b(kamu|aku|itu|ini)\b/g, '$1u'); // kamuu, akuu, ituu, iniu (mungkin kurang cocok)
+             // Revisi: Cukup tambahkan 'a' di akhir kata tertentu yang umum
+            result = result.replace(/\b(iya|masa|apa|kenapa|gimana|oh|wah|aduh|halo|hai)(?![a-z])/g, '$1a'); // Hanya jika di akhir kata
+
+
+            // 4. Punctuation Handling (Minimal & Contextual)
+            // Remove excessive punctuation first
+            result = result.replace(/([.,?!~;:]){2,}/g, '$1'); // "!!" -> "!", ",,," -> ","
+            result = result.replace(/\.{4,}/g, '...'); // More than 3 dots become ellipsis
+            result = result.replace(/(\s*\.\s*){3,}/g, '...'); // Handle spaced dots like ". . ."
+            result = result.replace(/\s+([.,?!~;:])/g, '$1'); // Remove space before punctuation
+            result = result.replace(/([.,?!~;:])(?=\S)/g, '$1 '); // Add space after punctuation if needed
+
+             // Ensure sentence ends with appropriate punctuation or a gentle tilde/emoji
+            if (!/[.?!~]$/.test(result.trim())) {
+                 if (result.endsWith('wkwk') || result.endsWith('hehe') || result.endsWith('haha')) {
+                    result += ''; // Biarkan tanpa titik jika diakhiri tawa
+                 } else if (Math.random() < 0.4) { // 40% chance for tilde
+                     result += '~';
+                 } else {
+                    result += '.'; // Default to period
+                 }
+            }
+
+            // 5. Capitalization (Sentence case)
+            // Capitalize the first letter of the entire text
+             result = result.charAt(0).toUpperCase() + result.slice(1);
+             // Optional: Capitalize after sentence-ending punctuation? (lebih kompleks)
+             // result = result.replace(/([.?!~]\s+)([a-z])/g, (match, p1, p2) => p1 + p2.toUpperCase());
+
+
+            // 6. Optional: Add Emoji (^^ atau hehe)
+            // Tambahkan jika tidak diakhiri tanda baca spesifik atau tawa
+            if (!/[.?!~]$/.test(result.trim()) && !/(wkwk|hehe|haha)$/.test(result.trim())) {
+                 if (Math.random() < 0.5) {
+                     result += ' ^^';
+                 } else {
+                     // result += ' hehe'; // Alternatif
+                 }
+            } else if (/[.?!~]$/.test(result.trim()) && Math.random() < 0.2) {
+                // Kadang tambahkan emoji bahkan setelah tanda baca (20% chance)
+                 result += ' ^^';
+            }
+
+
+            // 7. Final Trim and Cleanup
+            result = result.replace(/\s+/g, ' ').trim(); // Ensure single spaces
+
+            return result;
+        }
+
+        // --- Event Handler Functions ---
+        function handleGenerate() {
+            const originalText = inputText.value;
+            const gantengText = generateTypingGanteng(originalText);
+
+            outputResult.textContent = gantengText || 'Tidak ada teks untuk diubah...'; // Tampilkan hasil atau pesan default
+            outputResult.classList.add('visible'); // Animasikan tampilan hasil
+            copyButton.disabled = !gantengText; // Enable copy button jika ada hasil
+            copyButton.textContent = 'Salin Hasil'; // Reset teks tombol salin
+        }
+
+        function handleCopy() {
+            const textToCopy = outputResult.textContent;
+            if (!textToCopy || textToCopy === 'Hasil akan muncul di sini...') {
+                return; // Jangan salin jika tidak ada hasil
+            }
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Sukses menyalin
+                copyButton.textContent = 'Berhasil Disalin! ✅';
+                setTimeout(() => {
+                    copyButton.textContent = 'Salin Hasil';
+                }, 2000); // Reset teks tombol setelah 2 detik
+            }).catch(err => {
+                // Gagal menyalin (misal: di environment tidak aman/http)
+                console.error('Gagal menyalin teks: ', err);
+                copyButton.textContent = 'Gagal Menyalin ❌';
+                 setTimeout(() => {
+                    copyButton.textContent = 'Salin Hasil';
+                }, 2000);
+                // Di sini bisa ditambahkan fallback method jika diperlukan (deprecated)
+            });
+        }
+
+        // --- Initial State ---
+        generateButton.disabled = true; // Disable generate initially
+        copyButton.disabled = true; // Disable copy initially
+
+    </script>
+
+</body>
+</html>
