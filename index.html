@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Typing Ganteng Generator ✨ v4 (JSON)</title> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Typing Ganteng</title>
+
+    <meta name="description" content="Ubah gaya tulisan chat/santai/alay jadi lebih rapi, sopan, dan keren ala Typing Ganteng dengan alat bantu online ini. Coba sekarang!">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rapihin.github.io/typing">
+    <meta property="og:title" content="Typing Ganteng Generator ✨">
+    <meta property="og:description" content="Ubah gaya tulisan chat/santai/alay jadi lebih rapi, sopan, dan keren ala Typing Ganteng dengan alat bantu online ini. Coba sekarang!">
+    <meta property="og:image" content="https://cdn.xtermai.xyz/6cDip.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rapihin.github.io/typing">
+    <meta name="twitter:title" content="Typing Ganteng Generator ✨">
+    <meta name="twitter:description" content="Ubah gaya tulisan chat/santai/alay jadi lebih rapi, sopan, dan keren ala Typing Ganteng dengan alat bantu online ini. Coba sekarang!">
+    <meta name="twitter:image" content="https://cdn.xtermai.xyz/6cDip.jpg">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        /* ... CSS Anda (tidak perlu diubah) ... */
+        /* --- CSS Variables (Konfigurasi Tema) --- */
         :root {
-            --bg-color: #f4f7f9; /* Sedikit off-white */
+            --bg-color: #f4f7f9;
             --text-color: #333;
             --heading-color: #1a202c;
-            --primary-color: #4a90e2; /* Biru lembut */
+            --primary-color: #4a90e2;
             --primary-hover-color: #357ABD;
-            --secondary-color: #e2e8f0; /* Abu-abu muda untuk input/output */
-            --secondary-text-color: #4a5568;
-            --border-color: #cbd5e0;
+            --secondary-color: #e2e8f0;
+            --secondary-text-color: #4a5568; /* Digunakan juga untuk footer */
+            --border-color: #cbd5e0; /* Digunakan juga untuk border footer */
             --card-bg-color: #ffffff;
             --shadow-color: rgba(0, 0, 0, 0.1);
             --icon-color: var(--primary-color);
-            --success-color: #48bb78; /* Hijau untuk sukses */
-            --error-color: #f56565; /* Merah untuk error */
+            --success-color: #48bb78;
+            --error-color: #f56565;
 
             --font-body: 'Inter', sans-serif;
-            --font-heading: 'Space Grotesk', sans-serif; /* Atau 'Playfair Display' */
+            --font-heading: 'Space Grotesk', sans-serif;
 
             --transition-speed: 0.3s;
         }
@@ -34,11 +52,11 @@
                 --bg-color: #1a202c;
                 --text-color: #e2e8f0;
                 --heading-color: #f7fafc;
-                --primary-color: #63b3ed; /* Biru lebih cerah di dark mode */
+                --primary-color: #63b3ed;
                 --primary-hover-color: #4299e1;
                 --secondary-color: #2d3748;
-                --secondary-text-color: #a0aec0;
-                --border-color: #4a5568;
+                --secondary-text-color: #a0aec0; /* Digunakan juga untuk footer */
+                --border-color: #4a5568; /* Digunakan juga untuk border footer */
                 --card-bg-color: #2d3748;
                 --shadow-color: rgba(0, 0, 0, 0.4);
                 --icon-color: var(--primary-color);
@@ -65,8 +83,9 @@
             line-height: 1.7;
             padding: 2rem 1rem;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align top */
+            flex-direction: column; /* Ubah agar footer bisa di bawah */
+            justify-content: center; /* Tengahkan container utama */
+            align-items: center;
             min-height: 100vh;
             transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
         }
@@ -83,6 +102,7 @@
             opacity: 0; /* Start hidden for animation */
             transform: translateY(20px); /* Start slightly lower */
             animation: fadeInUp 0.6s ease-out forwards; /* Animation */
+            margin-bottom: auto; /* Dorong footer ke bawah jika konten pendek */
         }
 
         /* --- Header --- */
@@ -105,8 +125,8 @@
 
         h1 {
             font-family: var(--font-heading);
-            font-size: 2.5rem; /* Ukuran heading besar */
-            line-height: 1.2; /* Line-height longgar */
+            font-size: 2.5rem;
+            line-height: 1.2;
             color: var(--heading-color);
             transition: color var(--transition-speed) ease;
         }
@@ -124,7 +144,7 @@
         .output-section {
             margin-bottom: 2rem;
             opacity: 0;
-            animation: fadeInUp 0.6s 0.2s ease-out forwards; /* Staggered animation */
+            animation: fadeInUp 0.6s 0.2s ease-out forwards;
         }
 
         label {
@@ -146,48 +166,47 @@
             font-family: var(--font-body);
             font-size: 1rem;
             line-height: 1.6;
-            resize: vertical; /* Allow vertical resize */
+            resize: vertical;
             transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
         }
 
         textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3); /* Use RGB for opacity */
+            box-shadow: 0 0 0 3px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3);
         }
 
         /* Utility to parse primary color to RGB for focus shadow */
         body:has(:root) {
-          --primary-color-rgb: 74, 144, 226; /* Default RGB for #4a90e2 */
+          --primary-color-rgb: 74, 144, 226;
         }
         @media (prefers-color-scheme: dark) {
           body:has(:root) {
-             --primary-color-rgb: 99, 179, 237; /* RGB for #63b3ed */
+             --primary-color-rgb: 99, 179, 237;
           }
         }
-
 
         /* --- Buttons --- */
         .button-group {
             display: flex;
             gap: 1rem;
             margin-top: 1rem;
-            justify-content: flex-end; /* Align buttons to the right */
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens if needed */
+            justify-content: flex-end;
+            flex-wrap: wrap;
         }
 
         button {
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 600;
-            padding: 0.8rem 1.8rem; /* Padding lebar */
+            padding: 0.8rem 1.8rem;
             border: none;
-            border-radius: 50px; /* Tombol bulat */
+            border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, color 0.2s ease, opacity 0.2s ease;
-            position: relative; /* For potential ripple later */
-            overflow: hidden; /* For potential ripple later */
-            white-space: nowrap; /* Prevent text wrapping inside button */
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
         #generateButton {
@@ -202,10 +221,9 @@
             transform: none;
             box-shadow: none;
         }
-
         #generateButton:hover:not(:disabled) {
             background-color: var(--primary-hover-color);
-            transform: translateY(-2px); /* Sedikit loncat */
+            transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(var(--primary-color-rgb, 74, 144, 226), 0.3);
         }
 
@@ -219,12 +237,10 @@
             transform: none;
             box-shadow: none;
         }
-
         #copyButton:hover:not(:disabled) {
             background-color: var(--border-color);
-            transform: translateY(-2px); /* Sedikit loncat */
+            transform: translateY(-2px);
         }
-         /* Status feedback styles */
         #copyButton.success {
             background-color: var(--success-color);
             color: #fff;
@@ -233,10 +249,8 @@
              background-color: var(--error-color);
              color: #fff;
         }
-
-
         button:active:not(:disabled) {
-           transform: translateY(0px) scale(0.98); /* Efek "ditekan" */
+           transform: translateY(0px) scale(0.98);
            box-shadow: none;
         }
 
@@ -245,18 +259,16 @@
             width: 100%;
             min-height: 100px;
             padding: 1rem;
-            border: 1px dashed var(--border-color); /* Dashed border */
+            border: 1px dashed var(--border-color);
             border-radius: 8px;
             background-color: var(--secondary-color);
-            color: var(--text-color); /* Use default text color for output */
+            color: var(--text-color);
             font-size: 1rem;
-            line-height: 1.7; /* Slightly more spacious */
-            white-space: pre-wrap; /* Preserve line breaks and spaces */
-            word-wrap: break-word; /* Prevent overflow */
+            line-height: 1.7;
+            white-space: pre-wrap;
+            word-wrap: break-word;
             transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity 0.4s ease, transform 0.4s ease;
-            /* Opacity/Transform for result animation handled by JS adding/removing .visible */
         }
-
         #outputResult.visible {
             opacity: 1;
             transform: scale(1);
@@ -266,46 +278,54 @@
              transform: scale(0.98);
          }
 
+        /* --- Footer Styling --- */
+        /* Tambahkan style ini */
+        footer {
+            width: 100%; /* Agar lebar penuh */
+            text-align: center;
+            margin-top: 3rem; /* Jarak dari container utama */
+            padding: 1.5rem 1rem; /* Padding atas/bawah dan samping */
+            font-size: 0.85em; /* Ukuran font lebih kecil */
+            color: var(--secondary-text-color); /* Warna teks abu-abu */
+            border-top: 1px solid var(--border-color); /* Garis pemisah tipis */
+        }
 
         /* --- Animations --- */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             body {
                 padding: 1rem 0.5rem;
+                justify-content: flex-start; /* Align container ke atas di mobile */
             }
             .container {
                 padding: 1.5rem;
+                margin-bottom: 2rem; /* Beri jarak sebelum footer di mobile */
             }
-            h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 0.9rem;
-            }
+            h1 { font-size: 2rem; }
+            header p { font-size: 0.9rem; }
             button {
                 padding: 0.7rem 1.5rem;
                 font-size: 0.9rem;
-                 width: 100%; /* Make buttons full width on small screens */
+                 width: 100%;
             }
             .button-group {
-                flex-direction: column; /* Stack buttons on small screens */
-                align-items: stretch; /* Make buttons full width */
-                 gap: 0.75rem; /* Adjust gap for stacked buttons */
+                flex-direction: column;
+                align-items: stretch;
+                 gap: 0.75rem;
             }
             .input-section .button-group,
             .output-section .button-group {
                  margin-top: 1rem;
+            }
+            footer {
+                margin-top: 2rem;
+                padding: 1rem 0.5rem;
+                font-size: 0.8em;
             }
         }
     </style>
@@ -335,8 +355,9 @@
                  <button id="copyButton" disabled>Salin Hasil</button> </div>
         </div>
 
-    </div>
-
+    </div> <footer>
+        <p>Copyright &copy;2025 Typing | FawwazDzaky</p>
+        </footer>
     <script src="typing.js" defer></script>
 
 </body>
